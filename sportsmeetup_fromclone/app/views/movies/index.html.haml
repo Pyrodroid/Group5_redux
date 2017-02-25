@@ -1,0 +1,37 @@
+-#  This file is app/views/movies/index.html.haml
+%h1 All Movies
+
+= form_tag movies_path, :method => :get, :id => "ratings_form" do
+  Include:
+  - @all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]", 1, @checked_ratings.include?(rating), :id => "ratings_#{rating}"
+  -# probably a better way to preserve this data. Stupid GET
+  - if @hl_title
+    = hidden_field_tag :sort, "title"
+  - elsif @hl_date
+    = hidden_field_tag :sort, "date"
+  = submit_tag 'Refresh', :id => "ratings_submit"
+
+%table#movies
+  %thead
+    %tr
+      - if @hl_title
+        %th{:class => "hilite"}= link_to "Movie Title", movies_path(params.merge(sort: "title")), id: "title_header"
+      - else
+        %th= link_to "Movie Title", movies_path(params.merge(sort: "title")), id: "title_header"
+      %th Rating
+      - if @hl_date
+        %th{:class => "hilite"}= link_to "Release Date", movies_path(params.merge(sort: "date")), id: "release_date_header"
+      - else
+        %th= link_to "Release Date", movies_path(params.merge(sort: "date")), id: "release_date_header"
+      %th More Info
+  %tbody
+    - @movies.each do |movie|
+      %tr
+        %td= movie.title 
+        %td= movie.rating
+        %td= movie.release_date
+        %td= link_to "More about #{movie.title}", movie_path(movie)
+
+= link_to 'Add new movie', new_movie_path
