@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get 'sports/index'
   get 'sports/profile'
+  get 'sports/create_leauge'
+  get 'sports/find_league'
+  get 'sports/create_meet'
+  get 'sports/find_meet'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
