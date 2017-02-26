@@ -11,3 +11,19 @@ class CreateMovies < ActiveRecord::Migration
     end
   end
 end
+
+class CreateMeet < ActiveRecord::Migration
+  def change
+    create_table :meets do |t|
+      t.string :title
+      t.string :sport
+      t.text :description
+      t.date :date
+      t.time :time
+      t.string :location
+      # Add fields that let Rails automatically keep track
+      # of when movies are added or modified:
+      t.timestamps
+    end
+  end
+end

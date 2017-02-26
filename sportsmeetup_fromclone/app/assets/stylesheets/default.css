@@ -12,7 +12,7 @@ div#main {
 }
 a {
   background: transparent;
-  color: maroon;
+  color: blue;
   text-decoration: underline;
   font-weight: bold;
 }
@@ -58,4 +58,25 @@ form label {
   line-height: 25px;
   font-weight: bold;
   color: maroon;
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #35aeff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #2f9ce5}
+
+.button:active {
+  background-color: #2f9ce5;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

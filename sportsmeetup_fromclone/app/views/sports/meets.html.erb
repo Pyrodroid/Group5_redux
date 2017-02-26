@@ -1,0 +1,37 @@
+<title>Upcoming Meets:</title>
+
+
+<table id="meets">
+  <thead>
+    <tr>
+      <th class="<%= ("hilite" unless params[:sort] != 'title') %>">
+        <%= link_to "Meet Title", meets_path(sort: 'title', order: @order, ratings: params[:ratings]), {id: 'title_header'} %>
+      </th>
+      <th>Rating</th>
+      <th class="<%= ("hilite" unless params[:sort] != 'release_date') %>">
+        <%= link_to "Release Date", movies_path(sort: 'release_date', order: @order, ratings: params[:ratings]), {id: 'release_date_header'} %>
+      </th>
+      <th>More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td>
+          <%= movie.title %>
+        </td>
+        <td>
+          <%= movie.rating %>
+        </td>
+        <td>
+          <%= movie.release_date %>
+        </td>
+        <td>
+          <%= link_to "More about #{movie.title}", movie_path(movie) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add new movie', new_movie_path %>
+
