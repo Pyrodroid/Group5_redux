@@ -1,24 +1,27 @@
-# README
+# RottenPotatoes demo app: getting started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is associated with the free [online
+course](http://www.saas-class.org) and (non-free)
+[ebook](http://www.saasbook.info) Engineering Software as a Service.
 
-Things you may want to cover:
+To get started:
 
-* Ruby version
+0. [Setup a Cloud9
+environment](https://github.com/saasbook/courseware/wiki/Setting-up-Cloud9)
+for the course.
 
-* System dependencies
+0. In your Cloud9 terminal, type the following command to clone the repository to your development workspace:
 
-* Configuration
+  `git clone git@github.com:saasbook/rottenpotatoes-rails-intro.git`
 
-* Database creation
+0. Then `cd rottenpotatoes-rails-intro` to change to the app's
+directory.
 
-* Database initialization
+0. Run the command `bundle install --without production` to make sure all the gems
+(libraries) used by the app are in place.
 
-* How to run the test suite
+0. Run `bundle exec rake db:setup` to create the initial database.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+0. Run `rails server -p $PORT -b $IP` to start the app.  Cloud9 will pop
+up a window showing the URL to visit in your browser to interact with
+the running app.
