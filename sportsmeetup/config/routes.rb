@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'sports/index'
   get 'sports/profile'
-  get 'sports/create_leauge'
+  get 'sports/create_league'
   get 'sports/find_league'
   get 'sports/create_meet'
   get 'sports/find_meet'
