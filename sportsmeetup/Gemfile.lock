@@ -88,9 +88,11 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.10)
     formatador (0.2.5)
+    geocoder (1.4.3)
     gherkin (4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -262,6 +264,8 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_girl_rails
+  geocoder
+  gmaps4rails
   guard-rspec
   haml
   jbuilder (~> 2.0)

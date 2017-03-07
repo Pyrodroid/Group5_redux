@@ -22,5 +22,9 @@ module Rottenpotatoes
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    # config/application.rb
+
+     config.web_console.whitelisted_ips = '10.240.0.0/16'
   end
 end
