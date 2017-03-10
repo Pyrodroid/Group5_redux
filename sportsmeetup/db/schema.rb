@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809022253) do
+ActiveRecord::Schema.define(version: 20170310201851) do
+
+  create_table "games", force: :cascade do |t|
+    t.string   "title"
+    t.string   "sport"
+    t.string   "location"
+    t.string   "time"
+    t.text     "details"
+    t.integer  "max"
+    t.integer  "min"
+    t.integer  "sign_ups"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"

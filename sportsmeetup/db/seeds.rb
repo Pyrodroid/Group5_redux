@@ -13,22 +13,22 @@
 
 meets = [
 	{
-		:id => 0, :name => '', :league => 0, :sport => nil, :max_sign_ups => 3
+		:id => 0, :name => 'Frizbee1', :league => 0, :sport => nil, :max_sign_ups => 3,
 		:datetime => 0, :location => '', :lat => 0, :lng => 0,
 		:info => ''
 	},
 	{
-		:id => 1, :name => '', :league => 0, :sport => nil, :max_sign_ups => 10
+		:id => 1, :name => 'Fencing', :league => 0, :sport => nil, :max_sign_ups => 10,
 		:datetime => 0, :location => '', :lat => 0, :lng => 0,
 		:info => ''
 	},
 	{
-		:id => 2, :name => '', :league => 0, :sport => nil, :max_sign_ups => 10
+		:id => 2, :name => 'Frizzzbee', :league => 0, :sport => nil, :max_sign_ups => 10,
 		:datetime => 0, :location => '', :lat => 0, :lng => 0,
 		:info => ''
 	},
 	{
-		:id => 3, :name => '', :league => 0, :sport => nil, :max_sign_ups => 5
+		:id => 3, :name => 'More fencing', :league => 0, :sport => nil, :max_sign_ups => 5,
 		:datetime => 0, :location => '', :lat => 0, :lng => 0,
 		:info => ''
 	},
@@ -50,9 +50,9 @@ end
 
 # LU for sign-ups. id not unique, use by select id where
 sign_ups = [
-	{:id => 0, :person_first_name => '', :person_last_name => ''}
-	{:id => 0, :person_first_name => '', :person_last_name => ''}
-	{:id => 0, :person_first_name => '', :person_last_name => ''}
+	{:id => 0, :person_first_name => '', :person_last_name => ''},
+	{:id => 0, :person_first_name => '', :person_last_name => ''},
+	{:id => 0, :person_first_name => '', :person_last_name => ''},
 	{:id => 3, :person_first_name => '', :person_last_name => ''}
 ]
 

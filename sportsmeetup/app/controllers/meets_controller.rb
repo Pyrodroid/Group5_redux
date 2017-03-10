@@ -4,13 +4,26 @@ def meet_params
 end
 
   def show
-    id = params[:id] # retrieve movie ID from URI route
-    @movie = Meet.find(id) # look up movie by unique ID
+    @article = Article.find(params[:id])
+  end
+ 
+  def new
+  end
+
+  def index
+    #id = params[:id] # retrieve movie ID from URI route
+    @meets= Meet.all
+    # will render app/views/movies/show.<extension> by default
+  end 
+  
+  def show
+    #id = params[:id] # retrieve movie ID from URI route
+    @meet= Meet.find(params[:id])
     # will render app/views/movies/show.<extension> by default
   end 
   
   def meets
-    
+    Meet.find :all 
   end
 
   def new

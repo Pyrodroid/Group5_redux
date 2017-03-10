@@ -1,0 +1,14 @@
+<h1>Create a Game!</h1>
+
+<%= form_for :game, url: games_path(game), method: :patch do |f| %>
+  <p>
+    <%= f.label :your_name %><br>
+    <%= f.text_field :name %><br><br>
+    <%= f.label :your_email %><br>
+    <%= f.text_field :email %><br><br>
+</p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

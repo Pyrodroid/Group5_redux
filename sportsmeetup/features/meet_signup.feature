@@ -9,7 +9,7 @@ Feature: Sign up for a meet
         Given A meet exists
         And I am on the find_meets page
         And The meet is not full
-        When I Click the signup button next to the meet I want
+        When I click the signup button next to the meet I want
         Then I should see a you_signed_up message
     
     Scenario: No meets exist
