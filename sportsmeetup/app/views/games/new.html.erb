@@ -15,10 +15,11 @@
     <%= f.label :maximum_players_feasible %><br>
     <%= f.text_field :max %><br><br>
     <%= f.label :details%><br>
-    <%= f.text_area :details%><br>
+    <%= f.text_area :details, :cols=>'40', :rows=>'10'%><br>
 </p>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit :class=>"button"%>
+    <%= link_to '<button type="button" class="button">Cancel</button>'.html_safe, sports_path %>
   </p>
 <% end %>
