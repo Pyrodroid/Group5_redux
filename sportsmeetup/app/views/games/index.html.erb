@@ -23,7 +23,9 @@
       <td><%= game.sign_ups%></td>
       <td><%= game.details%></td>
       <td><%= link_to 'More Info', games_path(game) %></td>
-      <td><%= link_to 'Sign up!', games_path(game) %></td>
+      <% if game.sign_ups <  game.max %>      
+        <td><%= link_to 'Sign up!', games_path(game) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

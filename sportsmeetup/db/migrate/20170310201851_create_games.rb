@@ -3,6 +3,7 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.string :title
       t.string :sport
+      t.integer :league
       t.string :location
       t.string :time
       t.text :details
