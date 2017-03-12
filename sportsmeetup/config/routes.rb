@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'sports/index'
   get 'sports/profile'
   get 'sports/create_league'
