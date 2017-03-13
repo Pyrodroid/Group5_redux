@@ -18,8 +18,8 @@ Feature: Propose a new meet
 
     Scenario: Submitting the form - info needed
         Given I am on the create a meet page
-        And I leave some of the required info blank
-        When I  press submit
+        And I fill in "Sport" with ""
+        When I press submit
         Then I should be on the create a meet page
           
     Scenario: Cancelling the form - actually cancelling
