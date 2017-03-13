@@ -22,16 +22,10 @@
       <td><%= game.max%></td>
       <td><%= game.sign_ups%></td>
       <td><%= game.details%></td>
-<<<<<<< HEAD
       <td><%= link_to '<button type="button" class="button">More Info</button>'.html_safe, games_meet_details_path %></td>
       <td><%= link_to 'More Info', games_path(game) %></td>
       <% if game.sign_ups <  game.max %>
         <td><%= link_to "Sign up for #{game.title}!", games_edit_path(:id =>game.id) %></td>
-=======
-      <td><%= link_to 'More Info', games_meet_details_path %></td>
-      <% if game.sign_ups <  game.max %>      
-        <td><%= link_to 'Sign up!', games_path(game) %></td>
->>>>>>> efe438a6ae57f0cc97fed6c737b99346fbd41b46
       <% end %>
     </tr>
   <% end %>
