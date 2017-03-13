@@ -7,6 +7,8 @@ module NavigationHelpers
       games_new_path
     when /find_meets/
       games_path
+    when /sign_up/
+      edit_game_path(1) 
     else
       begin
         page_name =~ /the (.*) page/

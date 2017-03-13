@@ -11,10 +11,12 @@ class GamesController < ApplicationController
     def new
     end
     def edit
-    @game = Game.find(params[:id])
+        @game = Game.find(params[:id])
+                @game.sign_ups=@game.sign_ups+1
     end
     def update
         @game = Game.find(params[:id])
+                @game.sign_ups=@game.sign_ups+1
     end
     
     def signup
