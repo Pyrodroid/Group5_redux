@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :meets
   resources :games
   resources :sports
+  resources :profiles, only: [:edit]
   # You can have the root of your site routed with "root"
   root 'sports#index'
 
