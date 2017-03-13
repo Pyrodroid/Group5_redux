@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'sports/index'
   get 'sports/profile'
   get 'sports/create_league'
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   resources :meets
   resources :games
   resources :sports
+  resources :profiles, only: [:edit]
   # You can have the root of your site routed with "root"
   root 'sports#index'
 

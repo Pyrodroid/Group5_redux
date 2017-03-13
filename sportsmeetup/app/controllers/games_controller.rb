@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
     def game_params
-        params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :details)
+        params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :details, :emails)
     end
     def index
         @games = Game.all
@@ -16,7 +16,7 @@ class GamesController < ApplicationController
     end
     def create
         @game = Game.new(game_params)
- 
+        @game.sign_ups=0
         @game.save
         redirect_to @game
     end
