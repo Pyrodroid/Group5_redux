@@ -21,6 +21,7 @@ Rails.application.configure do
   
   #nowhiny
   config.web_console.whiny_requests = false
+  config.web_console.whitelisted_ips = '10.240.0.0/16'
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
