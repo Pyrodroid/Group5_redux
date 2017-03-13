@@ -75,6 +75,8 @@ GEM
       mime-types (>= 1.16, < 4)
       nokogiri (~> 1.5)
       railties (>= 3, < 5.1)
+    cucumber-rails-training-wheels (1.0.0)
+      cucumber-rails (>= 1.1.1)
     cucumber-wire (0.0.1)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
@@ -121,6 +123,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -260,8 +264,10 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  capybara
   coffee-rails (~> 4.1.0)
   cucumber-rails
+  cucumber-rails-training-wheels
   database_cleaner
   factory_girl_rails
   geocoder
@@ -270,6 +276,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  launchy
   pg
   rails (= 4.2.6)
   rails_12factor
