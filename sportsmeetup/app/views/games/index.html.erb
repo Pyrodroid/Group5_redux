@@ -11,22 +11,6 @@
     <th>Signed Up</th>
     <th>Details</th>
   </tr>
-<<<<<<< HEAD
-<% @games.each do |game| %>
-  <tr class="meet">
-    <td><%= game.title %></td>
-    <td><%= game.sport%></td>
-    <td><%= game.location%></td>
-    <td><%= game.time%></td>
-    <td><%= game.min%></td>
-    <td><%= game.max%></td>
-    <td><%= game.sign_ups%></td>
-    <td><%= game.details%></td>
-    <td><%= link_to '<button type="button" class="button">More Info</button>'.html_safe, games_meet_details_path %></td>
-  <%# <td><%= link_to 'More Info', games_path(game) </td> %>
-  <% if game.sign_ups <  game.max %>    
-    <td><%= link_to '<button type="button" class="button">Sign Up</button>'.html_safe, edit_game_path(game) %></td>
-=======
  
   <% @games.each do |game| %>
     <tr class='meet'>
@@ -40,10 +24,9 @@
       <td><%= game.details%></td>
       <td><%= link_to 'More Info', games_meet_details_path, :id => 'More Info' %></td>
       <% if game.sign_ups <  game.max %>      
-        <td><%= link_to 'Sign up!', games_path(game) %></td>
+          <td><%= link_to 'Sign Up', edit_game_path(game) %></td>
       <% end %>
     </tr>
->>>>>>> 65e2c6e0ff9f7813b8b2385b970d02bb1c446f52
   <% end %>
   <%= link_to 'More Info', games_meet_details_path, :id => 'More Info' %>
 </table>
