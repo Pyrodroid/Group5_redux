@@ -5,8 +5,10 @@ module NavigationHelpers
       sports_path
     when /create a meet/
       games_new_path
-    when /find_meets/
+    when /find a meet/
       games_path
+    when /meet details/
+      games_meet_details_path
     else
       begin
         page_name =~ /the (.*) page/
