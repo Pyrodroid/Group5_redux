@@ -1,6 +1,6 @@
 <h1>Listing Games</h1>
  
-<table id='games'>
+<table id="meets_list">
   <tr>
     <th>Title</th>
     <th>Sport</th>
@@ -13,7 +13,7 @@
   </tr>
  
   <% @games.each do |game| %>
-    <tr id='game'>
+    <tr class='meet'>
       <td><%= game.title %></td>
       <td><%= game.sport%></td>
       <td><%= game.location%></td>
@@ -22,7 +22,7 @@
       <td><%= game.max%></td>
       <td><%= game.sign_ups%></td>
       <td><%= game.details%></td>
-      <td id='link'><%= link_to 'More Info', games_meet_details_path, :id => 'More Info' %></td>
+      <td><%= link_to 'More Info', games_meet_details_path, :id => 'More Info' %></td>
       <% if game.sign_ups <  game.max %>      
         <td><%= link_to 'Sign up!', games_path(game) %></td>
       <% end %>
