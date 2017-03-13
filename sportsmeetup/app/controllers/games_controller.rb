@@ -11,12 +11,19 @@ class GamesController < ApplicationController
     def new
     end
     def edit
+    @game = Game.find(params[:id])
+    end
+    def update
         @game = Game.find(params[:id])
+    end
+    
+    def signup
         @game.sign_ups+=1
     end
     def create
         @game = Game.new(game_params)
         @game.sign_ups=0
+        @game.emails="altaeg#gmail.com"
         @game.save
         redirect_to @game
     end
