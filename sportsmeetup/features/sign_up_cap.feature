@@ -1,4 +1,4 @@
-Feature: Meet Sign-Up Cat
+Feature: Meet Sign-Up Cap
 
 Scenario: Cap on Meet List
 Given user navigates to meet list

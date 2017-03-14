@@ -11,11 +11,13 @@ When(/^a meet is( not)? at maximum capacity$/) do |negate|
   page.all('table#meets_list tr.meet').each do |tr|    
     tds = tr.all('td')
     if negate
-      expect(tds[6]).to be < tds[5]
-      @maxed_meets[tds[0]] = tds.size
+      if tds[6].text.to_i < tds[5].text.to_i
+        @maxed_meets[tds[0].text] = tds.size
+      end
     else
-      expect(tds[6]).to eq(tds[5])
-      @maxed_meets[tds[0]] = tds.size
+      if tds[6].text.to_i >= tds[5].text.to_i
+        @maxed_meets[tds[0].text] = tds.size
+      end
     end
 
   end
