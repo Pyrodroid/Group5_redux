@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :names
   get 'users/new'
 
   get 'sports/index'
