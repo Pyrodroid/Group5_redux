@@ -24,7 +24,7 @@ module Rottenpotatoes
     config.active_record.raise_in_transactional_callbacks = true
     
     # config/application.rb
-     config.web_console.development_only = false
-     config.web_console.whitelisted_ips = '10.240.0.0/16'
+    # config.web_console.development_only = false
+    # config.web_console.whitelisted_ips = '10.240.0.0/16'
   end
 end
