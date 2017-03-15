@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   put 'games/edit'
   post 'games/edit'
   
-  match '/games/:id', :to => 'games#update', :via => [:put]
+  match '/games.:id', :to => 'games#update', :via => [:patch]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
