@@ -10,8 +10,7 @@ class CreateGames < ActiveRecord::Migration
       t.integer :max
       t.integer :min
       t.integer :sign_ups
-
-      t.timestamps null: false
+      t.string :emails
     end
   end
 end

@@ -11,20 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314051446) do
+ActiveRecord::Schema.define(version: 20170316183504) do
 
   create_table "games", force: :cascade do |t|
-    t.string   "title"
-    t.string   "sport"
-    t.integer  "league"
-    t.string   "location"
-    t.string   "time"
-    t.text     "details"
-    t.integer  "max"
-    t.integer  "min"
-    t.integer  "sign_ups"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string  "title"
+    t.string  "sport"
+    t.integer "league"
+    t.string  "location"
+    t.string  "time"
+    t.text    "details"
+    t.integer "max"
+    t.integer "min"
+    t.integer "sign_ups"
+    t.string  "emails"
   end
 
   create_table "movies", force: :cascade do |t|

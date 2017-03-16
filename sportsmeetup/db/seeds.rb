@@ -13,16 +13,16 @@
 
 games = [
         {
-                :title => 'Frizbee1', :league => 0, :sport => nil,
+                :title => 'Frizbee1', :league => 0, :sport => 'Frizbee',
 				:max => 3, :min => 3, :sign_ups => 3,
-                :time => 0, :location => '', #:lat => 0, :lng => 0,
-                :details => ''
+                :time => 0, :location => 'Palmer Park', #:lat => 0, :lng => 0,
+                :details => 'Test Details', :emails => ''
         },
         {
-                :title => 'Fencing', :league => 0, :sport => nil,
-				:max => 15, :min => 7, :sign_ups => 10,
-                :time => 0, :location => '', #:lat => 0, :lng => 0,
-                :details => ''
+                :title => 'Melee', :league => 0, :sport => 'Fencing',
+				:max => 50, :min => 7, :sign_ups => 10,
+                :time => 0, :location => 'Somewhere big', #:lat => 0, :lng => 0,
+                :details => 'Mayham!',  :emails =>''
         },
         {
                 :title => 'Frizzzbee', :league => 0, :sport => nil,

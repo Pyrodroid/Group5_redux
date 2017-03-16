@@ -27,6 +27,7 @@
       <td><%= game.max%></td>
       <td><%= game.sign_ups%></td>
       <td><%= game.details%></td>
+      <td><%= game.emails%></td>
       <td><%= link_to 'More Info', games_meet_details_path, :id => 'More Info' %></td>
       <% if game.sign_ups <  game.max %>      
           <td><%= link_to 'Sign Up', edit_game_path(game) %></td>
