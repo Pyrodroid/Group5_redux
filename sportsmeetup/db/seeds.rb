@@ -22,7 +22,7 @@ games = [
                 :title => 'Melee', :league => 0, :sport => 'Fencing',
 				:max => 50, :min => 7, :sign_ups => 10,
                 :time => 0, :location => 'Somewhere big', #:lat => 0, :lng => 0,
-                :details => 'Mayham!',  :emails =>''
+                :details => 'Mayham!',  :emails =>'alta@fakeemail.com'
         },
         {
                 :title => 'Frizzzbee', :league => 0, :sport => nil,

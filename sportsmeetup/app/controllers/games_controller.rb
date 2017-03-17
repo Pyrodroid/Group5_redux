@@ -13,10 +13,14 @@ class GamesController < ApplicationController
     def edit
         @game = Game.find(params[:id])
                 @game.sign_ups=@game.sign_ups+1
+                @game.emails=@game.emails+("#{game_params.emails}")
                 @game.save
+                
     end
     def update
         @game = Game.find(params[:id])
+        @oldstring = @game.emails
+        @game.update(emails: params[:emails])
     end
     
     def signup
@@ -25,8 +29,6 @@ class GamesController < ApplicationController
     def create
         @game = Game.new(game_params)
         @game.sign_ups=0
-        @game.emails="altaeg#gmail.com"
-        @game.save
         redirect_to @game
     end
 end
