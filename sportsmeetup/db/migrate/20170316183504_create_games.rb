@@ -10,6 +10,7 @@ class CreateGames < ActiveRecord::Migration
       t.integer :max
       t.integer :min
       t.integer :sign_ups
+      t.integer :back_out
       t.string :emails
     end
   end

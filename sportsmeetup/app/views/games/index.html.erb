@@ -33,8 +33,11 @@
       <% if game.sign_ups <  game.max %>      
           <td><%= link_to 'Sign Up', edit_game_path(game) %></td>
       <% end %>
-    </tr>
+      <td><%= link_to 'Back out', games_meet_details_path, :id => 'Back Out' %></td>
   <% end %>
+    </tr>
+
+  </tr>
   <%#= link_to 'More Info', games_meet_details_path, :id => 'More Info' %>
 </table>
 
@@ -52,4 +55,5 @@ markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.fitMapToBounds();
   google.maps.event.addDomListener(window, 'page:load', initialize);
 });
+ 
 </script>
