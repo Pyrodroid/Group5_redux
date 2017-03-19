@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170316183504) do
     t.integer "max"
     t.integer "min"
     t.integer "sign_ups"
+    t.integer "back_out"
     t.string  "emails"
   end
 
