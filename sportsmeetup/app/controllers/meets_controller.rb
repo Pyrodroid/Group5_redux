@@ -1,10 +1,9 @@
 class MeetsController < ApplicationController
 def meet_params
-    params.require(:meets).permit(:title, :sport, :description, :date, :time, :location)
+    params.require(:game).permit(:title, :sport, :league, :details, :time, :location, :min, :max, :sign_ups, :emails, :last_email)
 end
 
   def show
-    @article = Article.find(params[:id])
   end
  
   def new
@@ -37,14 +36,14 @@ end
   end
 
   def edit
-    @meet = Meet.find params[:id]
+    @game = Game.find params[:id]
   end
 
   def update
-    @meet = Meet.find params[:id]
-    @meet.update_attributes!(meet_params)
-    flash[:notice] = "#{@meet.title} was successfully updated."
-    redirect_to meet_path(@meet)
+    @game = Game.find params[:id]
+    @game.update_attributes!(meet_params)
+    flash[:notice] = "#{@game.title} was successfully updated."
+    redirect_to root_path
   end
 
   def destroy

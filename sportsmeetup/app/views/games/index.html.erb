@@ -30,6 +30,7 @@
       <td><%= game.details%></td>
       <td><%= game.emails%></td>
       <td><%= link_to 'More Info', games_meet_details_path, :id => 'More Info' %></td>
+      <td><%= link_to 'Edit Meet', edit_meet_path(game) %></td>
       <% if game.sign_ups <  game.max %>      
           <td><%= link_to 'Sign Up', edit_game_path(game) %></td>
       <% end %>

@@ -15,12 +15,15 @@ class GamesController < ApplicationController
         @game = Game.find(params[:id])
                 
     end
+    def edit2
+        @game = Game.find(params[:id])
+                
+    end
     def update
         @game = Game.find(params[:id])
         @game.sign_ups=@game.sign_ups+1
         @game.save
         @oldstring = @game.emails
-        puts "oldstring is: "+@oldstring
         @game.update(emails: "#{@oldstring}"+" "+"#{game_params[:last_email]}")
     end
     
