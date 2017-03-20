@@ -1,14 +1,18 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  background: White;
-  color: DarkSlateGrey;
+html {
+  background-color: #c0c0c0; 
+}
+body {
+  background-color: #c0c0c0;
+  border: 2px solid #112442;
   font-family: Tahoma, Verdana, sans-serif;
   font-size: 10pt;
+  margin:0px auto;
+  margin-top: 25px;
+  width: 80%;
 }
-div#main {
-  margin: 0;
-  padding: 0 20px 20px;
+#main {
+  margin: 10px;
+  padding: 0px 20px 0px 20px;
 }
 a {
   background: transparent;
@@ -17,37 +21,27 @@ a {
   font-weight: bold;
 }
 h1 {
-  color: #35aeff;
+  color: #112442;
   display: block;
   width: 100%;
 }
-h1.title {
-  margin: 0 0 1em;
-  padding: 10px;
-  background-color: #35aeff;
+#header {
+  background-image:url(asset_path('sports_banner.png'));
+  background-repeat: no-repeat;
+  height:350px;
+  position: relative;
+}
+.title {
+  /*margin: 0 0 1em;*/
+  padding: 25px 0px 25px 0px;
+  background-color: #112442;
   color: white;
-  border-bottom: 4px solid #266bff;
-  font-size: 2em;
+  font-size: 3em;
   font-style: normal;
+  position: absolute;
+  bottom: -1;
 }
-table#movies {
-  margin: 10px;
-  border-collapse: collapse;
-  width: 100%;
-  border-bottom: 2px solid black;
-}
-table#movies th {
-  border: 2px solid white;
-  font-weight: bold;
-  background-color: wheat;
-}
-table#movies th, table#movies td {
-  padding: 4px;
-  text-align: left;
-}
-table#movies th.hilite {
-  background-color: yellow;
-}
+
 #notice #warning {
   background: rosybrown;
   margin: 1em 0;

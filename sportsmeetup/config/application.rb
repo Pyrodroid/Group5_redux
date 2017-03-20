@@ -26,5 +26,6 @@ module Rottenpotatoes
     # config/application.rb
     # config.web_console.development_only = false
     # config.web_console.whitelisted_ips = '10.240.0.0/16'
+    config.assets.paths << Rails.root.join("assets", "images")
   end
 end
