@@ -6,12 +6,13 @@ class CreateGames < ActiveRecord::Migration
       t.integer :league
       t.string :location
       t.string :time
-      t.text :details
+      t.string :details
       t.integer :max
       t.integer :min
       t.integer :sign_ups
       t.integer :back_out
       t.string :emails
+      t.string :last_email
     end
   end
 end

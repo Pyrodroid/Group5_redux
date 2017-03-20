@@ -16,25 +16,25 @@ games = [
                 :title => 'Frizbee1', :league => 0, :sport => 'Frizbee',
 				:max => 3, :min => 3, :sign_ups => 3,
                 :time => 0, :location => 'Palmer Park', #:lat => 0, :lng => 0,
-                :details => 'Test Details', :emails => ''
+                :details => 'Test Details', :emails => '', :last_email=>''
         },
         {
                 :title => 'Melee', :league => 0, :sport => 'Fencing',
 				:max => 50, :min => 7, :sign_ups => 10,
                 :time => 0, :location => 'Somewhere big', #:lat => 0, :lng => 0,
-                :details => 'Mayham!',  :emails =>'alta@fakeemail.com'
+                :details => 'Mayham!',  :emails =>'alta@fakeemail.com', :last_email=>''
         },
         {
                 :title => 'Frizzzbee', :league => 0, :sport => nil,
 				:max => 10, :min => 3, :sign_ups => 10,
                 :time => 0, :location => '', #:lat => 0, :lng => 0,
-                :details => ''
+                :details => '', :last_email=>''
         },
         {
                 :title => 'More fencing', :league => 0, :sport => nil,
 				:max => 15, :min => 7, :sign_ups => 5,
                 :time => 0, :location => '', #:lat => 0, :lng => 0,
-                :details => ''
+                :details => '', :last_email=>''
         },
 ]
 

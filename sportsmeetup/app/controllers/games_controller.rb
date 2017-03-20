@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
     def game_params
         params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :back_out,
-         :details, :emails)
+         :details, :emails, :last_email)
     end
     def index
         @games = Game.all
@@ -13,15 +13,15 @@ class GamesController < ApplicationController
     end
     def edit
         @game = Game.find(params[:id])
-                @game.sign_ups=@game.sign_ups+1
-                #@game.emails=@game.emails+("#{game_params.emails}")
-                @game.save
                 
     end
     def update
         @game = Game.find(params[:id])
+        @game.sign_ups=@game.sign_ups+1
+        @game.save
         @oldstring = @game.emails
-        @game.update(emails: @oldstring+" "+game_params[:emails])
+        puts "oldstring is: "+@oldstring
+        @game.update(emails: "#{@oldstring}"+" "+"#{game_params[:last_email]}")
     end
     
     def signup
@@ -29,7 +29,7 @@ class GamesController < ApplicationController
     end
     
     def back_out
-        @game.back_out-=1
+        @game.sign_ups-=1
     end
     
     def create
