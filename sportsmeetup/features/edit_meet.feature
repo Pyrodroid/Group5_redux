@@ -1,16 +1,16 @@
 Feature: editing a meet
   
     Scenario: Getting there
-      Given I am on the list of meets page
-      When I click the edit meets link
-      Then I should be on the edit meets page
-      And I should see Edit Meet:
+       Given I am on the find_meets page
+ +      When I click "Edit Meet"
+ +      Then I should be on the edit meet page
+ +      And I should see "Edit Meet:"
     
     Scenario: Good data
-      Given I am on the edit meets page
+      Given I am on the edit meet page
       And I enter data of the appropriate type
       And I click confirm changes
-      Then I should see Success!
+      Then I should see "Success!"
       And I should be back on the list of meets page
       And I should see my new data
      

@@ -13,6 +13,8 @@ module NavigationHelpers
       games_meet_details_path
     when /find_meets/
       games_path
+    when /edit meet/
+ +    edit_meet_path(1)
     else
       begin
         page_name =~ /the (.*) page/
