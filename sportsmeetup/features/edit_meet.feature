@@ -2,9 +2,9 @@ Feature: editing a meet
   
     Scenario: Getting there
        Given I am on the find_meets page
- +      When I click "Edit Meet"
- +      Then I should be on the edit meet page
- +      And I should see "Edit Meet:"
+      When I click "Edit Meet"
+      Then I should be on the edit meet page
+       And I should see "Edit Meet:"
     
     Scenario: Good data
       Given I am on the edit meet page
