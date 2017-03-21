@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
     def game_params
         params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :back_out,
-         :details, :emails, :last_email)
+         :details, :emails, :last_email, :updated_at, :password, :password_confirmation, :onestring, :twostring, :oneint, :twoint, :onedate, :onetime, :onedatetime, :lat, :long)
     end
     def index
         @games = Game.all

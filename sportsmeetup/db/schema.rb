@@ -11,21 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319235801) do
+ActiveRecord::Schema.define(version: 20170321211617) do
 
   create_table "games", force: :cascade do |t|
-    t.string  "title"
-    t.string  "sport"
-    t.integer "league"
-    t.string  "location"
-    t.string  "time"
-    t.string  "details"
-    t.integer "max"
-    t.integer "min"
-    t.integer "sign_ups"
-    t.integer "back_out"
-    t.string  "emails"
-    t.string  "last_email"
+    t.string   "title"
+    t.string   "sport"
+    t.integer  "league"
+    t.string   "location"
+    t.string   "time"
+    t.integer  "min"
+    t.integer  "max"
+    t.integer  "sign_ups"
+    t.text     "details"
+    t.string   "emails"
+    t.string   "last_email"
+    t.integer  "back_out"
+    t.string   "password"
+    t.string   "password_confirmation"
+    t.string   "updated_at"
+    t.string   "onestring"
+    t.string   "twostring"
+    t.integer  "oneint"
+    t.integer  "twoint"
+    t.date     "onedate"
+    t.time     "onetime"
+    t.datetime "onedatetime"
+    t.decimal  "lat"
+    t.decimal  "long"
   end
 
   create_table "movies", force: :cascade do |t|

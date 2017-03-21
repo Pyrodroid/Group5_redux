@@ -8,7 +8,7 @@ Feature: editing a meet
     
     Scenario: Good data
       Given I am on the edit meet page
-      And I enter data of the appropriate type
+      And I fill in "title" with "Saturday Meeting"
       And I click confirm changes
       Then I should see "Success!"
       And I should be back on the list of meets page

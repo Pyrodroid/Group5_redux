@@ -6,8 +6,8 @@ When(/^I click "Edit Meet"$/) do
    expect(page).to have_content(text)
  end
  
- Given(/^I enter data of the appropriate type$/) do
-   pending # Write code here that turns the phrase above into concrete actions
+ Given(/^(?:|I )fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
+        fill_in(field, :with => value) do
  end
  
  Given(/^I click confirm changes$/) do
