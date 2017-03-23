@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'games/new'
   get 'games/index'
   get 'games/meet_details'
+  put 'games/meet_details'
+  post 'games/meet_details'
   get 'games/edit'
   put 'games/edit'
   post 'games/edit'

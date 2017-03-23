@@ -13,11 +13,12 @@ class GamesController < ApplicationController
     end
     def edit
         @game = Game.find(params[:id])
-                
     end
     def edit2
         @game = Game.find(params[:id])
-                
+    end
+    def meet_details
+        @game = Game.find(params[:id])
     end
     def update
         @game = Game.find(params[:id])

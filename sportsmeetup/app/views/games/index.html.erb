@@ -11,10 +11,8 @@
     <th>Sport</th>
     <th>Location</th>
     <th>Time</th>
+    <th>Signed Up/Max</th>
     <th>Min</th>
-    <th>Max</th>
-    <th>Signed Up</th>
-    <th>Details</th>
     <th>Emails (for debug for now)</th>
   </tr>
  
@@ -24,12 +22,10 @@
       <td><%= game.sport%></td>
       <td><%= game.location%></td>
       <td><%= game.time%></td>
+      <td><%= game.sign_ups%>/<%= game.max%></td>
       <td><%= game.min%></td>
-      <td><%= game.max%></td>
-      <td><%= game.sign_ups%></td>
-      <td><%= game.details%></td>
       <td><%= game.emails%></td>
-      <td><%= link_to 'More Info', games_meet_details_path, :id => 'More Info' %></td>
+      <td><%= link_to 'More Info', {:controller => 'games', :action => 'meet_details', :id => game } %></td>
       <td><%= link_to 'Edit Meet', edit_meet_path(game) %></td>
       <% if game.sign_ups <  game.max %>      
           <td><%= link_to 'Sign Up', edit_game_path(game) %></td>
@@ -39,7 +35,6 @@
     </tr>
 
   </tr>
-  <%#= link_to 'More Info', games_meet_details_path, :id => 'More Info' %>
 </table>
 
 

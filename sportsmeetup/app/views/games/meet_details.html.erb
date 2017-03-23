@@ -1,14 +1,29 @@
 <title>Details</title>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Sport</th>
-    <th>Location</th>
-    <th>Time</th>
-    <th>Min</th>
-    <th>Max</th>
-    <th>Signed Up</th>
-    <th>Back Out</th>
-    <th>Details</th>
-  </tr>
+<p><strong>Title: </strong> <%= @game.title %></p>
+<p><strong>Sport: </strong> <%= @game.sport %></p>
+<p><strong>Location: </strong> <%= @game.location %></p>
+<p><strong>Time: </strong> <%= @game.time %></p>
+<p><strong>Signed up: </strong> <%= @game.sign_ups %>/<%= @game.max %></p>
+<p><strong>Minimum players: </strong> <%= @game.min %></p>
+<p><strong>Details: </strong> <%= @game.details %></p>
+<p>
+    <% if @game.sign_ups <  @game.max %>      
+      <%= link_to 'Sign Up', edit_game_path(@game) %>
+    <% end %>
+</p>
+<p><%= link_to 'Edit Meet', edit_meet_path(@game) %></p>
+
+<div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  google.maps.event.addDomListener(window, 'page:load', initialize);
+});
+ 
+</script>
