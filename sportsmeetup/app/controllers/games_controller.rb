@@ -9,12 +9,8 @@ class GamesController < ApplicationController
     def show
         @game = Game.find(params[:id])
     end
-    def new
-    end
+    
     def edit
-        @game = Game.find(params[:id])
-    end
-    def edit2
         @game = Game.find(params[:id])
     end
     def meet_details
@@ -40,5 +36,10 @@ class GamesController < ApplicationController
         @game = Game.new(game_params)
         @game.sign_ups=0
         redirect_to @game
+    end
+    def destroy
+        @game = Game.find(params[:id])
+        @game.delete
+        redirect_to games_path
     end
 end

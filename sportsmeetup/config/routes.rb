@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get 'games/edit'
   put 'games/edit'
   post 'games/edit'
+  
+
+
 
   
   match '/games.:id', :to => 'games#update', :via => [:patch]
