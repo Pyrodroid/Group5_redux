@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   put 'games/edit'
   post 'games/edit'
   
-
+  get '/back_out', to: 'games#back_out'
 
 
   

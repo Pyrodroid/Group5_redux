@@ -30,7 +30,7 @@
       <% if game.sign_ups <  game.max %>      
           <td><%= link_to 'Sign Up', edit_game_path(game) %></td>
       <% end %>
-      <td><%= link_to 'Back out', games_meet_details_path, :id => 'Back Out' %></td>
+      <td><%= link_to 'Back out', back_out_path, :id => 'Back Out' %></td>
       <td><%= link_to 'Delete Meet', game_path(game),
               method: :delete,
 
