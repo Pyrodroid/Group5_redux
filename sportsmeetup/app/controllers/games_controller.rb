@@ -18,10 +18,24 @@ class GamesController < ApplicationController
     end
     def update
         @game = Game.find(params[:id])
-        @game.sign_ups=@game.sign_ups+1
-        @game.save
-        @oldstring = @game.emails
-        @game.update(emails: "#{@oldstring}"+" "+"#{game_params[:last_email]}")
+        #@game.update(onestring: game_params[:onestring])
+        if @game.password != ""
+            if @game.password == game_params[:onestring]
+                @game.sign_ups=@game.sign_ups+1
+                @game.save
+                @oldstring = @game.emails
+                @game.update(emails: "#{@oldstring}"+" "+"#{game_params[:last_email]}")
+            else
+	        #flash.now[:error] = "Incorrect password"
+                
+                redirect_to games_error_path
+            end
+        else
+            @game.sign_ups=@game.sign_ups+1
+            @game.save
+            @oldstring = @game.emails
+            @game.update(emails: "#{@oldstring}"+" "+"#{game_params[:last_email]}")
+        end
     end
     
     def signup
@@ -42,5 +56,16 @@ class GamesController < ApplicationController
         @game = Game.find(params[:id])
         @game.delete
         redirect_to games_path
+    end
+    def verify_pw
+        if @game.password == ""
+            return true
+        else
+            if @game.password == @game.onestring
+                return true
+            else
+                return false
+            end
+        end
     end
 end

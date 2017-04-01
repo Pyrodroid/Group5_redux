@@ -9,7 +9,11 @@
   <strong>Sport:</strong>
   <%= @game.sport %>
 <strong>Where:</strong>
-  <%= @game.location %>
+  <%= @game.location %><br>
   <strong>Details:</strong>
   <%= @game.details %>
+</p>
+
+<p>
+<%= link_to '<button type="button" id="return_to_index" class="button">Return to List</button>'.html_safe, games_path %>
 </p>
