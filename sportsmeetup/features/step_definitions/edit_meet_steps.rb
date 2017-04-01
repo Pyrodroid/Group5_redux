@@ -1,12 +1,16 @@
 When(/^I click "Edit Meet"$/) do
- visit edit_meet_path(2)
- end
+ visit edit_meet_path(6)
+end
+
+When (/^(?:|I )follow "([^\"]*)"$/) do |link|
+  click_link(link)
+end
  
  Then (/^(?:|I )should see "([^"]*)"$/) do |text|
    expect(page).to have_content(text)
  end
  
- Given(/^(?:|I )write "([^"]*)" in the "([^"]*)" field$/) do |value, field|
+ Given(/^(?:|I )write "([^"]*)" in the ([^"]*) field$/) do |value, field|
         fill_in(field, :with => value) do
         end
  end

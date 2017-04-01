@@ -24,10 +24,6 @@ class GamesController < ApplicationController
         @game.update(emails: "#{@oldstring}"+" "+"#{game_params[:last_email]}")
     end
     
-    def signup
-        @game.sign_ups+=1
-    end
-    
     def back_out
         @game.sign_ups-=1
     end
