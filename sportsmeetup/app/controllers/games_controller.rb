@@ -16,7 +16,6 @@ class GamesController < ApplicationController
     def meet_details
         @game = Game.find(params[:id])
     end
-    
     def update
         @game = Game.find(params[:id])
         @game.sign_ups=@game.sign_ups+1
@@ -30,12 +29,13 @@ class GamesController < ApplicationController
     end
     
     def back_out
-      
+        @game.sign_ups-=1
     end
     
     def create
         @game = Game.new(game_params)
         @game.sign_ups=0
+        @game.save
         redirect_to @game
     end
     def destroy

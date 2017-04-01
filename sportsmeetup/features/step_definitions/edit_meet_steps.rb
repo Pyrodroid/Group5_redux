@@ -6,8 +6,9 @@ When(/^I click "Edit Meet"$/) do
    expect(page).to have_content(text)
  end
  
- Given(/^(?:|I )fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
+ Given(/^(?:|I )write "([^"]*)" in the "([^"]*)" field$/) do |value, field|
         fill_in(field, :with => value) do
+        end
  end
  
  Given(/^I click confirm changes$/) do
