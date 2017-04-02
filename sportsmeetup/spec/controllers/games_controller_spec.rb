@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe GamesController, type: :controller do
 
-let(:game) { FactoryGirl.create(:game) }
-let(:valid_attributes) { FactoryGirl.build(:game).attributes.symbolize_keys }
+  let(:game) { FactoryGirl.create(:game) }
+  let(:valid_attributes) { FactoryGirl.build(:game).attributes.symbolize_keys }
 
   describe "GET #index" do
     it "renders the index template" do
@@ -12,19 +12,26 @@ let(:valid_attributes) { FactoryGirl.build(:game).attributes.symbolize_keys }
     end
   end
   
-context "#edit" do
+  context "#edit" do
     #render_views
     it "user should be able to edit game" do
       get :edit, id: game.id
       expect(response).to render_template("edit")
     end
-end
+  end
 
-describe "GET #edit" do
+  describe "GET #edit" do
     it "assigns the requested game as @game" do
       game = Game.create!
       get :edit, {:id => game.to_param}
       expect(assigns(:game)).to eq(game)
+    end
+  end
+  
+  context "#meet_details" do
+    it "user should be able to get more info" do
+      get :meet_details, id: game.id
+      expect(response).to render_template("meet_details")
     end
   end
 
@@ -39,6 +46,7 @@ describe "GET #edit" do
         expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
       end
     end
+    
     describe "verify correct password" do
       let(:new_attributes) { FactoryGirl.build(:game, onestring: 'Password').attributes.symbolize_keys }
       
