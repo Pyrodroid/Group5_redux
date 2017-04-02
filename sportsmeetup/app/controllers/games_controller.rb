@@ -39,7 +39,7 @@ class GamesController < ApplicationController
     end
     
     def back_out
-        @game.sign_ups-=1
+       
     end
     
     def create

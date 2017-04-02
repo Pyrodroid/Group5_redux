@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   get 'games/error'
   put 'games/error'
   post 'games/error'  
-   
-  get '/back_out', to: 'games#back_out'
   
+  get '/back_out', to: 'games#back_out'
+  post '/back_out', to: 'games#back_out'
 
   
   match '/games.:id', :to => 'games#update', :via => [:patch]

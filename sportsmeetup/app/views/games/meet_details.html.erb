@@ -11,6 +11,7 @@
     <% if @game.sign_ups <  @game.max %>      
       <%= link_to 'Sign Up', edit_game_path(@game) %>
     <% end %>
+    <%= link_to 'Back out', back_out_path(@game), :id => 'Back Out' %>
 </p>
 <p><%= link_to 'Edit Meet', edit_meet_path(@game) %></p>
 
