@@ -4,7 +4,7 @@
   <p>
 
     <%= f.label :your_email %><br>
-    <%= f.text_field :last_email %><br><br>
+    <%= f.text_field :last_email,required: true%><br><br>
 </p>
   <p>
     <% if @game.password != nil %>

@@ -9,5 +9,6 @@ FactoryGirl.define do
     max "10"
     sign_ups "3"
     details "Stuff"
+    password "Password"
   end
 end

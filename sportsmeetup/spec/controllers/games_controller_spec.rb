@@ -39,6 +39,29 @@ describe "GET #edit" do
         expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
       end
     end
+    describe "verify correct password" do
+      let(:new_attributes) { FactoryGirl.build(:game, onestring: 'Password').attributes.symbolize_keys }
+      
+      it "updates the requiested game", focus: true do
+        game = Game.create! valid_attributes
+        put :update, {:id=> game.to_param, :game =>new_attributes}
+        game.reload
+        expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
+        expect(game.sign_ups).to eq(4)
+      end
+    end 
+     
+    describe "reject incorrect password" do
+      let(:new_attributes) { FactoryGirl.build(:game, onestring: 'a').attributes.symbolize_keys }
+      
+      it "does not add to the signups", focus: true do
+        game = Game.create! valid_attributes
+        put :update, {:id=> game.to_param, :game =>new_attributes}
+        game.reload
+        expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
+        expect(game.sign_ups).to eq(3)
+      end
+    end 
   end
   
   describe 'DELETE #destroy' do
@@ -48,6 +71,7 @@ describe "GET #edit" do
       expect{delete :destroy, :id => @game}.to change(Game, :count).by(-1)
     end
   end
+  
 end   
   
 
