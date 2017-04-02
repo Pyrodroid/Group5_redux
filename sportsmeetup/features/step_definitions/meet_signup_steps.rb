@@ -2,7 +2,7 @@ When(/^I hit the find_meets button$/) do
   click_button("Find A Meet")
 end
 
-Then /^(?:|I )should be at (.+) page$/ do |page_name|
+Then (/^(?:|I )should be at (.+) page$/) do |page_name|
   visit path_to(page_name)
 end
 

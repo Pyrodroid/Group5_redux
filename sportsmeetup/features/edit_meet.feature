@@ -8,15 +8,15 @@ Feature: editing a meet
     
     Scenario: Good data
       Given I am on the edit meet page
-      And I write "Somewhere" in the location field
+      And I fill in "Title" with "New Title" within "form"
       And I click confirm changes
-      Then I should see "Success!"
+      Then I should see "was successfully updated"
       And I should be back on the list of meets page
-      And I should see my new data
+      And I should see "New Title"
      
      Scenario: Bad data
       Given I am on the edit meets page
-      And I enter data of the wrong type
+      And I fill in "game_max" with "not a number" within "form"
       Then I should see Sorry, wrong data type- try again
       And Still be on the edit meets page
       
