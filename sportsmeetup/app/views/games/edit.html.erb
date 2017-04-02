@@ -6,8 +6,15 @@
     <%= f.label :your_email %><br>
     <%= f.text_field :last_email %><br><br>
 </p>
- 
+  <p>
+    <% if @game.password != nil %>
+        <h3>Password</h3>
+        <%= f.password_field :onestring, required: true %>
+    <% end %>
+  </p> 
   <p>
     <%= f.submit "Sign Up", :class=>"button", id: "submit" %>
+    <%= link_to '<button type="button" id="cancel" class="button">Cancel</button>'.html_safe, games_path %>
   </p>
+  
 <% end %>
