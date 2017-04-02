@@ -11,17 +11,17 @@
     <%= f.label :time %><br>
     <%= f.text_field :time , required: true%><br><br>
     <%= f.label :minimum_players_needed %><br>
-    <%= f.text_field :min , required: true%><br><br>
+    <%= f.text_field :min ,id:"Min", required: true%><br><br>
     <%= f.label :maximum_players_feasible %><br>
-    <%= f.text_field :max , required: true%><br><br>
+    <%= f.text_field :max ,id:"Max", required: true%><br><br>
     <%= f.label :details%><br>
-    <%= f.text_area :details, :cols=>'40', :rows=>'10'%><br>
+    <%= f.text_area :details,id:"Details", :cols=>'40', :rows=>'10'%><br>
     <h3> If you would like to include a password for this game, enter it below.</h3>     
     <h3>Otherwise, leave the following fields blank</h3><br>
     <%= f.label :password%><br>
     <%= f.password_field :password %><br><br>
     <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %><br><br>
+    <%= f.password_field :password_confirmation,id:"Password Confirmation" %><br><br>
 </p>
  
   <p>

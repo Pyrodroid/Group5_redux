@@ -14,7 +14,7 @@ Feature: Propose a new meet
         And I fill in "Max" with "10"
         And I fill in "Details" with "nothing"
         And I press submit
-        Then I should be on the meet details page
+        Then I should see Title 
 
     Scenario: Submitting the form - info needed
         Given I am on the create a meet page
@@ -27,7 +27,19 @@ Feature: Propose a new meet
         When I press cancel
         Then I should be on the dashboard page
 
-Scenario: Create a new meet - with a password
+    Scenario: Create a new meet - form loads 
+        Given I am on the create a meet page
+        Then I should see "Title"
+        And I should see "Sport"
+        And I should see "Location"
+        And I should see "Time"
+        And I should see "Minimum"
+        And I should see "Maximum"
+        And I should see "Details"
+        And I should see "Password"
+        And I should see "Password confirmation"
+
+    Scenario: Create a new meet - with a password
         Given I am on the create a meet page
         When I fill in "Title" with "newMeet"
         And I fill in "Sport" with "frisbee"
@@ -38,7 +50,7 @@ Scenario: Create a new meet - with a password
         And I fill in "Password" with "password"
         And I fill in "Password Confirmation" with "password"
         And I press submit
-        Then I should be on the meet details page
+        Then I should see Title 
 
     Scenario: Create a new meet - without a password
        Given I am on the create a meet page
@@ -51,7 +63,7 @@ Scenario: Create a new meet - with a password
         And I fill in "Password" with ""
         And I fill in "Password Confirmation" with ""
         And I press submit
-        Then I should be on the meet details page
+        Then I should see Title 
 
 Scenario: Create a new meet - don't validate password
        Given I am on the create a meet page
