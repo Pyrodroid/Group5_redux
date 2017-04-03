@@ -1,24 +1,22 @@
 <html>
   <head>
     <title>SPORTS! Meet Up and Play</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-    <script src="//malsup.github.io/jquery.cycle2.js"></script>
+    
+    <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" %>
+    <%= csrf_meta_tags %>
     <script>
       $.fn.cycle.defaults.speed = 1000;
     </script>
-    
-    <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" %> 
-    <%= csrf_meta_tags %>
   </head>
   <body>
     <div id="gallery" class="cycle-slideshow" data-cycle-slides="div">
       <!-- Duplication to make the banner cycle work and NOT break layout. Fix later? -->
       <div class="site_header_1"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
-      <div class="site_header_2"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
-      <div class="site_header_3"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
-      <div class="site_header_4"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
-      <div class="site_header_5"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
+      <div class="site_header_2 hidden_header"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
+      <div class="site_header_3 hidden_header"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
+      <div class="site_header_4 hidden_header"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
+      <div class="site_header_5 hidden_header"><h1 class="title">&nbsp;&nbsp;SPORTS! Meet Up and Play</h1></div>
     </div>
     <div id="main">
       <% if flash[:notice] %>
@@ -29,7 +27,8 @@
   
       <%= yield %>
       <br />
-      <br />
     </div>
+    <!-- Spacer -->
+    <div style="height:100px">&nbsp;</div>
   </body>
 </html>
