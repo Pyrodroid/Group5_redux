@@ -26,9 +26,13 @@ When(/^Enter an email in the signup form$/) do
 end
 
 When(/^I hit the submit button$/) do
-    click_button("Save Game")
+    click_button("Sign Up")
 end
 
 Then(/^The number of signups should increase by one$/) do
   pending # Write code here that turns the phrase above into concrete actions
+end
+
+When (/^I hit "more details" within "table"$/) do
+  #visit meet_details_path(2)
 end

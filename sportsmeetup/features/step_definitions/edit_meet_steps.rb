@@ -1,4 +1,3 @@
-
 module WithinHelpers
   def with_scope(locator)
     locator ? within(locator) { yield } : yield
@@ -19,7 +18,7 @@ end
    expect(page).to have_content(text)
  end
  
-When (/^(?:|I )fill in "([^"]*)" with "([^"]*)"(?: within "([^"]*)")?$/) do |field, value, selector|
+When (/^(?:|I )fill "([^"]*)" with "([^"]*)"(?: within "([^"]*)")?$/) do |field, value, selector|
   with_scope(selector) do
     fill_in(field, :with => value)
   end
@@ -38,22 +37,18 @@ end
       expect(page).to have_content("New Title")
  end
  
- Given(/^I enter data of the wrong type$/) do
-   pending # Write code here that turns the phrase above into concrete actions
- end
- 
- Then(/^I should see Sorry, wrong data type\- try again$/) do
-   pending # Write code here that turns the phrase above into concrete actions
- end
- 
  Then(/^Still be on the edit meets page$/) do
-   pending # Write code here that turns the phrase above into concrete actions
+      expect(page).to have_content("Edit Meet")
  end
  
- Given(/^I make all the fields blank$/) do
-   pending # Write code here that turns the phrase above into concrete actions
+ Given(/^I make required fields blank$/) do
+   with_scope("form") do
+    fill_in "Title", :with =>""
+    fill_in("Sport", :with => nil)
+    fill_in("Location", :with => nil)
+  end
  end
- 
- Then(/^I should see Did you mean to delete the meet\?$/) do
-   pending # Write code here that turns the phrase above into concrete actions
- end
+
+Then(/^I should still be on the edit meets page$/) do
+      expect(page).to have_content("Edit Meet")
+end

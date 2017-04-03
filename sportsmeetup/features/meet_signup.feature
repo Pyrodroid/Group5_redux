@@ -16,9 +16,10 @@ Feature: Sign up for a meet
         Then I should see the signup form
     
     Scenario: Signing up for a meet - data
-        When Enter an email in the signup form
+        Given I should be on the sign_up page
+        When I fill "game_last_email" with "test@testing.com" within "form"
         And I hit the submit button
-        Then The number of signups should increase by one
+        Then I should be on the find_meets page
     
     Scenario: Leaving page
         Given I am on the find_meets page

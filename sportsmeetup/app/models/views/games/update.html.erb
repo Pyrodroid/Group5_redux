@@ -1,0 +1,15 @@
+<h1>You have succesfully signed up for:</h1>
+
+<tr class='meet'>
+      <td><%= @game.title %></td>
+      <td><%= @game.sport%></td>
+      <td><%= @game.location%></td>
+      <td><%= @game.time%></td>
+      <td><%= @game.min%></td>
+      <td><%= @game.max%></td>
+      <td><%= @game.sign_ups%></td>
+      <td><%= @game.back_out%></td>
+      <td><%= @game.details%></td>
+</tr>  
+
+<%= link_to '<button type="button" class="button">Back</button>'.html_safe, games_path %>

@@ -1,0 +1,20 @@
+<h1>Sign Up:</h1>
+
+<%= form_for :game, url: games_path(@game), method: :patch do |f| %>
+  <p>
+
+    <%= f.label :your_email %><br>
+    <%= f.text_field :last_email,required: true%><br><br>
+</p>
+  <p>
+    <% if @game.password != nil %>
+        <h3>Password</h3>
+        <%= f.password_field :onestring, required: true %>
+    <% end %>
+  </p> 
+  <p>
+    <%= f.submit "Sign Up", :class=>"button", id: "submit" %>
+    <%= link_to '<button type="button" id="cancel" class="button">Cancel</button>'.html_safe, games_path %>
+  </p>
+  
+<% end %>

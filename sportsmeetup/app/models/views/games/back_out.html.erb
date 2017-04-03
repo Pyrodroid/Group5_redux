@@ -1,0 +1,20 @@
+<h1>Back Out:</h1>
+
+<%= form_for :game, url: games_path(@game), method: :patch do |f| %>
+ 
+ <p>
+
+    
+<%= f.label :your_email %><br>
+    
+<%= f.text_field :last_email %><br><br>
+</p>
+ 
+  
+<p>
+    
+<%= f.submit "Back Out", :class=>"button", id: "submit" %>
+ 
+ </p>
+<%= link_to 'Edit Meet', back_out_path(@game) %>
+<% end %>

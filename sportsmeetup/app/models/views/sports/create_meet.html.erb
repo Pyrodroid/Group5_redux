@@ -1,0 +1,29 @@
+<title>Create a Meet</title>
+<h1> Create a Meet </h1>
+
+<h2> Is this meet a part of a league? </h2>
+<%= radio_button_tag(:in_league, "yes") %>
+<%= label_tag(:yes_league, "Yes") %>
+<%= radio_button_tag(:in_league, "no") %>
+<%= label_tag(:no_league, "No") %>
+
+<h3> If so, what league is it part of? <h3>
+<input type="text" name="league_name">
+
+<h2>Please enter a date for the meet.</h2>
+<input type="date" name="meet_date">
+
+<h2>Please enter a time for the meet.</h2>
+<input type="time" name="meet_time">
+
+<h2> Please enter a place for the meet.</h2>
+<input type="text" name="meet_place">
+
+<h2>Please include any additional details here.</h2>
+<textarea rows="5" cols="50"></textarea>
+
+</br>
+</br>
+<h1>
+<%= link_to '<button type="button" class="button">Cancel</button>'.html_safe, sports_path %>
+<%= link_to '<button type="button" class="button">Submit</button>'.html_safe, sports_path %>
