@@ -41,9 +41,14 @@ end
 
   def update
     @game = Game.find params[:id]
-    @game.update_attributes!(meet_params)
-    flash[:notice] = "#{@game.title} was successfully updated."
-    redirect_to root_path
+    if /[0-9]+/.match(meet_params[:max])
+      @game.update_attributes!(meet_params)
+      flash[:notice] = "#{@game.title} was successfully updated."
+      redirect_to root_path
+    else
+      redirect_to edit_meet_path
+      flash[:notice] = "Wrong data type!"
+    end
   end
 
   def destroy

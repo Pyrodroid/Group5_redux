@@ -8,7 +8,7 @@ Feature: editing a meet
     
     Scenario: Good data
       Given I am on the edit meet page
-      And I fill in "Title" with "New Title" within "form"
+      And I fill "Title" with "New Title" within "form"
       And I click confirm changes
       Then I should see "was successfully updated"
       And I should be back on the list of meets page
@@ -16,14 +16,15 @@ Feature: editing a meet
      
      Scenario: Bad data
       Given I am on the edit meets page
-      And I fill in "game_max" with "not a number" within "form"
-      Then I should see Sorry, wrong data type- try again
+      And I fill "game_max" with "not a number" within "form"
+      And I click confirm changes
+      Then I should see "Wrong data type!"
       And Still be on the edit meets page
       
     Scenario: No data
       Given I am on the edit meets page
-      And I make all the fields blank
+      And I fill "Title" with "" within "form"
       And I click confirm changes
-      Then I should see Did you mean to delete the meet?
-      And I should be back on the list of meets page
+      Then I should still be on the edit meets page
+
       
