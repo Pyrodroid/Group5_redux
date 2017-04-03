@@ -50,7 +50,8 @@ class GamesController < ApplicationController
     end
     def destroy
         @game = Game.find(params[:id])
-        @game.delete
+        @game.destroy
+        flash[:notice] = "#{@game.title}' deleted."
         redirect_to games_path
     end
     def verify_pw
