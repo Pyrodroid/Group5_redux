@@ -5,6 +5,7 @@ class SportsController < ApplicationController
       marker.lat user.latitude
       marker.lng user.longitude
       marker.infowindow user.description
+       
 end
   end
   def find_meet

@@ -59,6 +59,7 @@
     }
   },
   function(){
+    
     markers = handler.addMarkers([
       {
         "lat": 38.8339,
@@ -85,9 +86,11 @@
       }
     ]);
      handler.bounds.extendWith(markers);
-     handler.fitMapToBounds(); 
+     handler.fitMapToBounds();
+     handler.getMap().setZoom(11)
       google.maps.event.addDomListener(window, 'page:load', initialize);
     }
+   
   );
     </script>
   </div>
