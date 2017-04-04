@@ -19,12 +19,12 @@ class GamesController < ApplicationController
     def update
         @game = Game.find(params[:id])
         #@game.update(onestring: game_params[:onestring])
-        if @game.password != ""
+        if (@game.password != "")&&(@game.password!=" ")
             if @game.password == game_params[:onestring]
                 @game.sign_ups=@game.sign_ups+1
                 @game.save
                 @oldstring = @game.emails
-                @game.update(emails: "#{@oldstring}"+" "+"#{game_params[:last_email]}")
+                @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
             else
 	        #flash.now[:error] = "Incorrect password"
                 
@@ -34,7 +34,10 @@ class GamesController < ApplicationController
             @game.sign_ups=@game.sign_ups+1
             @game.save
             @oldstring = @game.emails
-            @game.update(emails: "#{@oldstring}"+" "+"#{game_params[:last_email]}")
+            @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
+        end
+        if @game.sign_ups==@game.min
+            Notifier.go(@game).deliver 
         end
     end
     
