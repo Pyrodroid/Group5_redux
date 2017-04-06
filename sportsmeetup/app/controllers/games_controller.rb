@@ -19,7 +19,7 @@ class GamesController < ApplicationController
     def update
         @game = Game.find(params[:id])
         #@game.update(onestring: game_params[:onestring])
-        if (@game.password != "")&&(@game.password!=" ")
+        if (@game.password != "")
             if @game.password == game_params[:onestring]
                 @game.sign_ups=@game.sign_ups+1
                 @game.save
