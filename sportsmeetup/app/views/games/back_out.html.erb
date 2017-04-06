@@ -1,20 +1,15 @@
-<h1>Back Out:</h1>
+<h1>You have succesfully back out from the meeting:</h1>
 
-<%= form_for :game, url: games_path(@game), method: :patch do |f| %>
- 
- <p>
+<tr class='meet'>
+      <td><%= @game.title %></td>
+      <td><%= @game.sport%></td>
+      <td><%= @game.location%></td>
+      <td><%= @game.time%></td>
+      <td><%= @game.min%></td>
+      <td><%= @game.max%></td>
+      <td><%= @game.sign_ups%></td>
+      <td><%= @game.back_out%></td>
+      <td><%= @game.details%></td>
+</tr>  
 
-    
-<%= f.label :your_email %><br>
-    
-<%= f.text_field :last_email %><br><br>
-</p>
- 
-  
-<p>
-    
-<%= f.submit "Back Out", :class=>"button", id: "submit" %>
- 
- </p>
-<%= link_to 'Edit Meet', back_out_path(@game) %>
-<% end %>
+<%= link_to '<button type="button" class="button">Back</button>'.html_safe, games_path %>

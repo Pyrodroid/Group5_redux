@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
     def game_params
-        params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :back_out,
+        params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :back_out, :back_link,
          :details, :emails, :last_email, :updated_at, :password, :password_confirmation, :onestring, :twostring, :oneint, :twoint, :onedate, :onetime, :onedatetime, :lat, :long)
     end
     def index
@@ -13,15 +13,34 @@ class GamesController < ApplicationController
     def edit
         @game = Game.find(params[:id])
     end
+    
     def meet_details
         @game = Game.find(params[:id])
     end
+    
+    def back_link
+	   
+        @game = Game.find(params[:id])
+       # @game.sign_ups=@game.sign_ups-1
+       # @game.save
+        #@oldstring = @game.emails
+       # @game.exit1(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
+    end
+    
+    def back_out
+        @game = Game.find(params[:id])
+        @game.sign_ups=@game.sign_ups-1
+        @game.save
+         redirect_to games_path
+    end
+    
     def update
         @game = Game.find(params[:id])
         #@game.update(onestring: game_params[:onestring])
         if (@game.password != "")&&(@game.password!=" ")
             if @game.password == game_params[:onestring]
                 @game.sign_ups=@game.sign_ups+1
+                
                 @game.save
                 @oldstring = @game.emails
                 @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
@@ -41,9 +60,7 @@ class GamesController < ApplicationController
         end
     end
     
-    def back_out
-       
-    end
+
     
     def create
         @game = Game.new(game_params)

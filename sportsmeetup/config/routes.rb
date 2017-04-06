@@ -19,10 +19,15 @@ Rails.application.routes.draw do
   put 'games/error'
   post 'games/error'  
   
-  get '/back_out', to: 'games#back_out'
-  post '/back_out', to: 'games#back_out'
+  get 'games/back_out'
+  put 'games/back_out'
+  post 'games/back_out'
+  get '/back_link', to: 'games#back_link' 
+ # get '/back_out', to: 'games#back_out' 
+ # put '/back_out', to: 'games#back_out'
+ #post'/back_out', to: 'games#back_out'
 
-  
+  match '/games.:id', :to => 'games#back_out', :via => [:patch]
   match '/games.:id', :to => 'games#update', :via => [:patch]
   match '/meets.:id', :to => 'meets#update', :via => [:patch]
   # The priority is based upon order of creation: first created -> highest priority.

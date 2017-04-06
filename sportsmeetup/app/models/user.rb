@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     before_create :build_profile #creates profile at user registration
     
     has_many :signedups
-    has_many :back_out
+    
     has_many :games, :through => :appointments
     
     before_save {|user| user.email=email.downcase }

@@ -65,7 +65,9 @@ ActiveRecord::Schema.define(version: 20170321211617) do
 
   add_index "signedups", ["game_id"], name: "index_signedups_on_game_id"
   add_index "signedups", ["user_id"], name: "index_signedups_on_user_id"
-
+  
+ 
+  
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"

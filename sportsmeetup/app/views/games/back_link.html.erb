@@ -1,0 +1,19 @@
+<h1>Back Out:</h1>
+
+<%= form_for :game, url: games_path(@game), method: :patch do |f| %>
+ 
+ <p>
+<%= f.label :your_email %><br>
+    
+<%= f.text_field :last_email %><br><br>
+</p>
+ 
+<p>
+    
+<%= f.submit "Back Out", :class=>"button", id: "submit" %>
+</p>
+</p>
+<%= link_to '<button type="button" id="return" class="button">Return to List</button>'.html_safe, games_path%>
+</p>
+
+<% end %>
