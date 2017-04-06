@@ -7,7 +7,7 @@
     <%= f.text_field :last_email,required: true%><br><br>
 </p>
   <p>
-    <% if @game.password != nil %>
+    <% if @game.password != nil&&@game.password !="" %>
         <h3>Password</h3>
         <%= f.password_field :onestring, required: true %>
     <% end %>
