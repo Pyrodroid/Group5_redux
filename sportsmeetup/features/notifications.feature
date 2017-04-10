@@ -22,3 +22,4 @@ Scenario: backing out to below minimum
   And the meet has exactly the minimum signups
   And Someone backs out of the meet
   Then I should get an email that says the meet is off
+ 
