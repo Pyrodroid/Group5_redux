@@ -20,7 +20,10 @@ When(/^someone signs up for the meet$/) do
 end
 
 Then(/^I should get an email that says the meet will happen$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  email = ActionMailer::Base.deliveries.first
+  email.from.should == "admin@example.com"
+  email.to.should == @game.emails
+  email.body.should include("is on!")
 end
 
 When(/^I am on the meet details page for a specific meet$/) do

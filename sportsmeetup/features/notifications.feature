@@ -17,7 +17,7 @@ Scenario: signups reach minimum - part two
     Then I should get an email that says I signed up
     And I should get an email that says the meet will happen
     
-Scenario: backing out
+Scenario: backing out to below minimum
   When I am signed up for a meet
   And the meet has exactly the minimum signups
   And Someone backs out of the meet
