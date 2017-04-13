@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'games/edit'
   put 'games/edit'
   post 'games/edit'
+  get 'games/signup'
  
   get 'games/error'
   put 'games/error'

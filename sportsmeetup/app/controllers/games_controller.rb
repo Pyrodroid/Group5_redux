@@ -26,17 +26,9 @@ class GamesController < ApplicationController
         #@oldstring = @game.emails
        # @game.exit1(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
     end
-    
-    def back_out
+    def signup
         @game = Game.find(params[:id])
-        @game.sign_ups=@game.sign_ups-1
-        @game.save
-        if (@game.sign_ups==(@game.min-1))
-            Notifier.stop(@game).deliver 
-        end
-         redirect_to games_path
     end
-    
     def update
         @game = Game.find(params[:id])
         if (params[:commit]=='Sign Up')
@@ -46,7 +38,9 @@ class GamesController < ApplicationController
                     @game.sign_ups=@game.sign_ups+1
                     @game.save
                     @oldstring = @game.emails
+                    @oldnames = @game.twostring
                     @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
+                    @game.update(twostring: "#{@oldnames}"+"\n"+"#{game_params[:twostring]}"+",")
                 else
                     redirect_to games_error_path
                 end
@@ -69,12 +63,12 @@ class GamesController < ApplicationController
             redirect_to games_path
         elsif (params[:commit]=='Confirm Changes')
                 @game = Game.find params[:id]
-                if /[0-9]+/.match(meet_params[:max])
-                    @game.update_attributes!(meet_params)
+                if /[0-9]+/.match(game_params[:max])
+                    @game.update_attributes!(game_params)
                     flash[:notice] = "#{@game.title} was successfully updated."
                 redirect_to root_path
                 else
-                    redirect_to edit_meet_path
+                    redirect_to edit_game_path
                     flash[:notice] = "Wrong data type!"
                 end
         end
