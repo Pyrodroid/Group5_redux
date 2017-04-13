@@ -27,14 +27,10 @@ Rails.application.routes.draw do
  # put '/back_out', to: 'games#back_out'
  #post'/back_out', to: 'games#back_out'
 
-  match '/games.:id', :to => 'games#back_out', :via => [:patch]
   match '/games.:id', :to => 'games#update', :via => [:patch]
-  match '/meets.:id', :to => 'meets#update', :via => [:patch]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-
-  resources :meets
   resources :games
   resources :sports
   resources :profiles, only: [:edit]

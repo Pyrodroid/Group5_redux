@@ -31,32 +31,52 @@ class GamesController < ApplicationController
         @game = Game.find(params[:id])
         @game.sign_ups=@game.sign_ups-1
         @game.save
+        if (@game.sign_ups==(@game.min-1))
+            Notifier.stop(@game).deliver 
+        end
          redirect_to games_path
     end
     
     def update
         @game = Game.find(params[:id])
-        #@game.update(onestring: game_params[:onestring])
-        if (@game.password != "")
-            if @game.password == game_params[:onestring]
+        if (params[:commit]=='Sign Up')
+            #@game.update(onestring: game_params[:onestring])
+            if (@game.password != "")
+                if @game.password == game_params[:onestring]
+                    @game.sign_ups=@game.sign_ups+1
+                    @game.save
+                    @oldstring = @game.emails
+                    @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
+                else
+                    redirect_to games_error_path
+                end
+            else
                 @game.sign_ups=@game.sign_ups+1
-                
                 @game.save
                 @oldstring = @game.emails
                 @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
-            else
-	        #flash.now[:error] = "Incorrect password"
-                
-                redirect_to games_error_path
             end
-        else
-            @game.sign_ups=@game.sign_ups+1
+            if @game.sign_ups==@game.min
+                Notifier.go(@game).deliver 
+            end
+        elsif (params[:commit]=='Back Out')
+            @game = Game.find(params[:id])
+            @game.sign_ups=@game.sign_ups-1
             @game.save
-            @oldstring = @game.emails
-            @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
-        end
-        if @game.sign_ups==@game.min
-            Notifier.go(@game).deliver 
+            if (@game.sign_ups==(@game.min-1))
+                Notifier.stop(@game).deliver 
+            end
+            redirect_to games_path
+        elsif (params[:commit]=='Confirm Changes')
+                @game = Game.find params[:id]
+                if /[0-9]+/.match(meet_params[:max])
+                    @game.update_attributes!(meet_params)
+                    flash[:notice] = "#{@game.title} was successfully updated."
+                redirect_to root_path
+                else
+                    redirect_to edit_meet_path
+                    flash[:notice] = "Wrong data type!"
+                end
         end
     end
     
@@ -70,6 +90,9 @@ class GamesController < ApplicationController
     end
     def destroy
         @game = Game.find(params[:id])
+        if (@game.emails!=""&&@game.email!=nil)
+            Notifier.del(@game).deliver 
+        end
         @game.destroy
         flash[:notice] = "#{@game.title} deleted."
         redirect_to games_path
