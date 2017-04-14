@@ -39,8 +39,9 @@ class GamesController < ApplicationController
                     @game.save
                     @oldstring = @game.emails
                     @oldnames = @game.twostring
+                    @newname = game_params[:twostring]
                     @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
-                    @game.update(twostring: "#{@oldnames}"+"\n"+"#{game_params[:twostring]}"+",")
+                    @game.update(twostring: "#{@oldnames}"+", "+"#{@newname}")
                 else
                     redirect_to games_error_path
                 end
