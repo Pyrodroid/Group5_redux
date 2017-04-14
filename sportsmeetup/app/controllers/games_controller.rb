@@ -1,7 +1,6 @@
 class GamesController < ApplicationController
     def game_params
-        params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :back_out, :back_link,
-         :details, :emails, :last_email, :updated_at, :password, :password_confirmation, :onestring, :twostring, :oneint, :twoint, :onedate, :onetime, :onedatetime, :lat, :long)
+        params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :back_out, :back_link, :details, :emails, :last_email, :updated_at, :password, :password_confirmation, :onestring, :twostring, :oneint, :twoint, :onedate, :onetime, :onedatetime, :lat, :long, :full_name)
     end
     def index
         @games = Game.all
@@ -39,9 +38,13 @@ class GamesController < ApplicationController
                     @game.save
                     @oldstring = @game.emails
                     @oldnames = @game.twostring
-                    @newname = game_params[:twostring]
+                    @newname = game_params[:full_name]
                     @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
-                    @game.update(twostring: "#{@oldnames}"+", "+"#{@newname}")
+                    if (@oldnames==""||@oldnames==nil) 
+                        @game.update(twostring: "#{@newname}")
+                    else 
+                        @game.update(twostring: "#{@oldnames}"+"\n"+"#{@newname}") 
+                    end
                 else
                     redirect_to games_error_path
                 end
@@ -49,7 +52,14 @@ class GamesController < ApplicationController
                 @game.sign_ups=@game.sign_ups+1
                 @game.save
                 @oldstring = @game.emails
+                @oldnames = @game.twostring
+                @newname = game_params[:full_name]
                 @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
+                if (@oldnames==""||@oldnames==nil) 
+                    @game.update(twostring: "#{@newname}")
+                else 
+                    @game.update(twostring: "#{@oldnames}"+"\n"+"#{@newname}") 
+                end
             end
             if @game.sign_ups==@game.min
                 Notifier.go(@game).deliver 
@@ -85,7 +95,7 @@ class GamesController < ApplicationController
     end
     def destroy
         @game = Game.find(params[:id])
-        if (@game.emails!=""&&@game.email!=nil)
+        if (@game.emails!=""&&@game.emails!=nil)
             Notifier.del(@game).deliver 
         end
         @game.destroy

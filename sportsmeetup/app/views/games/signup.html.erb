@@ -3,7 +3,7 @@
 <%= form_for :game, url: games_path(@game), method: :patch do |f| %>
   <p>
     <%= f.label :your_name %><br>
-    <%= f.text_field :twostring,required: true%><br><br>
+    <%= f.text_field :full_name,required: true%><br><br>
 
     <%= f.label :your_email %><br>
     <%= f.text_field :last_email,required: true%><br><br>

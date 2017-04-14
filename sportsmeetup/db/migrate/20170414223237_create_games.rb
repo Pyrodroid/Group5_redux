@@ -25,6 +25,8 @@ class CreateGames < ActiveRecord::Migration
       t.datetime :onedatetime
       t.decimal :lat
       t.decimal :long
+      t.string :full_name
+      t.string :extra_string
     end
   end
 end
