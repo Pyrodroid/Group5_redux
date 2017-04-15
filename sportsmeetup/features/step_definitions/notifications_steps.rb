@@ -6,9 +6,11 @@ end
 World(WithinHelpers)
 
 When(/^I am signed up for a meet$/) do
-  with_scope("form") do
-    fill_in("Your Email", :with => "testing@test.com")
-  end
+  #with_scope("form") do
+    fill_in("last_email", :with => "testing@test.com")
+    fill_in("full_name", :with => "Joe")
+    click_button("Sign Up")
+  #end
 end
 
 When(/^the signups for the meet are one less than the minumum$/) do

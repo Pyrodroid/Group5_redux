@@ -8,6 +8,7 @@ SimpleCov.start 'rails'
 
 require 'cucumber/rails'
 require 'capybara'
+require File.dirname(__FILE__) + '/seeds'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any

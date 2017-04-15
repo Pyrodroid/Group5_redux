@@ -4,10 +4,19 @@ module WithinHelpers
   end
 end
 World(WithinHelpers)
-
+Given(/^I am at the edit meet page$/) do
+      visit root_path
+      with_scope("table") do
+        click_link('More Info', match: :first)
+    end
+    click_link('Edit Meet', match: :first)
+end
 
 When(/^I click "Edit Meet"$/) do
- visit edit_meet_path(6)
+    with_scope("table") do
+        click_link('More Info', match: :first)
+    end
+    click_link('Edit Meet', match: :first)
 end
 
 When (/^(?:|I )follow "([^\"]*)"$/) do |link|

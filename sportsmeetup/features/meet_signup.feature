@@ -17,7 +17,7 @@ Feature: Sign up for a meet
     
     Scenario: Signing up for a meet - data
         Given I should be on the sign_up page
-        When I fill "game_last_email" with "test@testing.com" within "form"
+        When I fill "last_email" with "test@testing.com" within "form"
         And I hit the submit button
         Then I should be on the find_meets page
     
