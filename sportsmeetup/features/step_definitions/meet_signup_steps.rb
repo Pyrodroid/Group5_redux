@@ -2,17 +2,23 @@ When(/^I hit the find_meets button$/) do
   click_button("Find A Meet")
 end
 
+Given(/^I hit a "([^"]*)" link$/) do |arg1|
+  with_scope("table") do
+        click_link(arg1, match: :first)
+    end
+end
+
 Then (/^(?:|I )should be at (.+) page$/) do |page_name|
   visit path_to(page_name)
 end
 
-When(/^I hit the signup button$/) do
-      visit edit_game_path(2)
+When(/^I hit the signup link$/) do
+  click_link("Sign Up", match: :first)
 end
 
 
 Then(/^I should see the signup form$/) do
-  expect(page).to have_content("Sign Up:")
+  expect(page).to have_content("Sign Up")
   expect(page).to have_content("Your email")
 end
 

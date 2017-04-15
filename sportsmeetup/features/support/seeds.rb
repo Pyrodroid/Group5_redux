@@ -14,7 +14,7 @@
 games = [
         {
                 :title => 'Frizbee1', :league => 0, :sport => nil,
-				:max => 3, :min => 3, :sign_ups => 3,
+				:max => 10, :min => 3, :sign_ups => 2,
                 :time => 0, :location => '', #:lat => 0, :lng => 0,
                 :details => ''
         },

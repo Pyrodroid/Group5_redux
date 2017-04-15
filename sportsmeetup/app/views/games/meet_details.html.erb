@@ -13,7 +13,7 @@
 <p><strong>Details: </strong> <%= @game.details %></p>
 <p>
     <% if @game.sign_ups <  @game.max %>      
-      <%= link_to 'Sign Up', {:controller => 'games', :action => 'signup', :id => @game.id} %></td>
+      <p></p><%= link_to 'Sign Up', {:controller => 'games', :action => 'signup', :id => @game.id} %></td></p>
     <% end %>
      <td><%= link_to 'Back Out',{:controller => 'games', :action => 'back_link', :id => @game.id} %></td>
 </p>
