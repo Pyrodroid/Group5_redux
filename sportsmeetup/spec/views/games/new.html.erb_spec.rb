@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+=begin
 RSpec.describe "games/new", type: :view do
   before(:each) do
     assign(:game, Game.new(
@@ -17,3 +17,4 @@ RSpec.describe "games/new", type: :view do
     end
   end
 end
+=end
