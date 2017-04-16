@@ -86,7 +86,7 @@ end
         game.reload
         expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
       end
-      
+end    
 describe "PUT update/:id" do
   let(:attr) do 
     { :title => 'new title', :min => '1' }
@@ -96,12 +96,6 @@ describe "PUT update/:id" do
     put :update, :id => @game.id, :game => attr
     @game.reload
   end
-
-  it { expect(response).to redirect_to(@game) }
-  it { expect(@game.title).to eql attr[:title] }
-  it { expect(@game.content).to eql attr[:description] }
-end
-
 
     describe "verify correct password" do
       let(:new_attributes) { FactoryGirl.build(:game, onestring: 'Password').attributes.symbolize_keys }
@@ -129,13 +123,10 @@ end
   end
   
   describe 'DELETE #destroy' do
-  context "success" do
     it "deletes the game" do
-      @game = Game.create! valid_attributes
-      expect{delete :destroy, :id => @game}.to change(Game, :count).by(-1)
+      game = FactoryGirl.create(:game)
+      expect{delete :destroy, :id => game}.to change(Game, :count).by(-1)
     end
-  end
-  
 end   
   
 
