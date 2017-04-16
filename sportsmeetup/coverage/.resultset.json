@@ -386,82 +386,6 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/controllers/names_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
       "/home/ubuntu/workspace/Group5/sportsmeetup/app/controllers/sports_controller.rb": [
         1,
         1,
@@ -533,10 +457,6 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/name.rb": [
-        1,
-        null
-      ],
       "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/user.rb": [
         1,
         null,
@@ -560,51 +480,11 @@
         0,
         null
       ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/controllers/profiles_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/back_out.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/movie.rb": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/sign_up.rb": [
-        0,
-        0,
-        0
-      ],
       "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/league.rb": [
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/signedup.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/profile.rb": [
-        0,
         0,
         0
       ]
     },
-    "timestamp": 1492320987
+    "timestamp": 1492365202
   }
 }
