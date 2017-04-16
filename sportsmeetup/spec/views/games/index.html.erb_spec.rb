@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "names/index", type: :view do
+RSpec.describe "games/index", type: :view do
   before(:each) do
-    assign(:names, [
-      Name.create!(
-        :email => "Email",
-        :login => "Login"
+    assign(:games, [
+      Game.create!(
+        :emails => "Email",
+        :title => "Title"
       ),
-      Name.create!(
-        :email => "Email",
-        :login => "Login"
+      Game.create!(
+        :emails => "Email",
+        :title => "Title"
       )
     ])
   end

@@ -46,7 +46,22 @@ RSpec.describe GamesController, type: :controller do
         expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
       end
     end
-    
+describe "PUT update/:id" do
+  let(:attr) do 
+    { :title => 'new title', :description => 'new description' }
+  end
+
+  before(:each) do
+    put :update, :id => @game.id, :game => attr
+    @game.reload
+  end
+
+  it { expect(response).to redirect_to(@game) }
+  it { expect(@game.title).to eql attr[:title] }
+  it { expect(@game.content).to eql attr[:description] }
+end
+
+
     describe "verify correct password" do
       let(:new_attributes) { FactoryGirl.build(:game, onestring: 'Password').attributes.symbolize_keys }
       

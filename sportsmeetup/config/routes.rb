@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :names
   get 'users/new'
-  #get 'coverage/index'
   get 'sports/index'
   get 'sports/profile'
   get 'sports/create_league'
