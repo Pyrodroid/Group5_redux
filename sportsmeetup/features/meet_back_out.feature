@@ -1,4 +1,21 @@
 Feature: Backing out of Meets
+  
+ Scenario: Backing out of a meet - nav
+        Given I am on the find_meets page
+        And I hit a "More Info" link
+        Then I should see "Back Out"
+        And I hit the back out link
+        Then I should see the backout form
+    
+    Scenario: Backing out of a meet - data
+        Given I am on the find_meets page
+        And I hit a "More Info" link
+        Then I should see "Back Out"
+        And I hit the back out link
+        Then I should see the backout form
+        And I fill "game_last_email" with "test@testing.com" within "form"
+        And I hit the "Back Out" button
+        Then I should be on the find_meets page
 
 Scenario: Back Out From Meet List
 Given user is on meet list

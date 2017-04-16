@@ -8,6 +8,10 @@ Given(/^I hit a "([^"]*)" link$/) do |arg1|
     end
 end
 
+Given(/^I hit a "([^"]*)" link for a meet with a password$/) do |arg1|
+   page.all('a', :text => "#{arg1}")[2.to_i - 1].click    
+end
+
 Then (/^(?:|I )should be at (.+) page$/) do |page_name|
   visit path_to(page_name)
 end
@@ -22,6 +26,11 @@ Then(/^I should see the signup form$/) do
   expect(page).to have_content("Your email")
 end
 
+Then(/^I should see the signup form with a password field$/) do
+  expect(page).to have_content("Sign Up")
+  expect(page).to have_content("Your email")
+  expect(page).to have_content("Password")
+end
 
 When(/^I hit the dashboard button$/) do
   visit root_path
