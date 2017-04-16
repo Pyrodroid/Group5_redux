@@ -72,6 +72,7 @@ end
       get :meet_details, id: game.id
       expect(response).to render_template("meet_details")
     end
+
   end
 
   describe "PUT update" do
@@ -92,7 +93,7 @@ describe "PUT update/:id" do
     put :update, :id => @game.id, :game => attr
     @game.reload
   end
-
+end
     describe "verify correct password" do
       let(:new_attributes) { FactoryGirl.build(:game, onestring: 'Password').attributes.symbolize_keys }
       
@@ -116,7 +117,7 @@ describe "PUT update/:id" do
         expect(game.sign_ups).to eq(3)
       end
     end 
-  end
+
   
   describe 'DELETE #destroy' do
     it "deletes the game" do
