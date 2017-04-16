@@ -130,20 +130,20 @@ describe "PUT update/:id" do
 end   
   
 
-  #describe "GET #show" do
-    #it "assigns the requested game to @game"
-    #it "renders the :show template"
-  #end
+  describe "GET #show" do
+    it "assigns the requested game to @game"
+    it "renders the :show template"
+  end
  
-  #describe "POST #create" do
-    #context "with valid attributes" do
-      #it "saves the new game in the database"
-      #it "redirects to the success page"
-    #end
-    
-    #context "with invalid attributes" do
-      #it "does not save the new game in the database"
-      #it "re-renders the :new template"
-    #end
+  describe "POST #create" do
+    context "with valid attributes" do
+      it "saves the new game in the database"
+      it "redirects to the success page"
+    end
+  end
+    context "with invalid attributes" do
+      it "does not save the new game in the database"
+      it "re-renders the :new template"
+    end
 
 end
