@@ -53,12 +53,10 @@ end
   
   context "#edit" do
     #render_views
-=begin
     it "user should be able to edit game" do
       get :edit, id: game.id
       expect(response).to render_template("edit")
     end
-=end
   end
 
   describe "GET #edit" do
@@ -70,12 +68,10 @@ end
   end
   
   context "#meet_details" do
-=begin
     it "user should be able to get more info" do
       get :meet_details, id: game.id
       expect(response).to render_template("meet_details")
     end
-=end
   end
 
   describe "PUT update" do
