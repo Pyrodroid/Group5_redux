@@ -110,7 +110,7 @@ describe "PUT update/:id" do
   end
 end
     describe "verify correct password" do
-      let(:new_attributes) { FactoryGirl.build(:game, onestring: 'Password').attributes.symbolize_keys }
+      let(:new_attributes) { FactoryGirl.build(:game, onestring: 'password').attributes.symbolize_keys }
       
       it "updates the requiested game", focus: true do
         game = Game.create! valid_attributes

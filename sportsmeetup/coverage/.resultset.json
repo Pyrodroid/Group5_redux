@@ -431,16 +431,6 @@
         1,
         null
       ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/mailers/user_mailer.rb": [
-        1,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
       "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/game.rb": [
         1,
         null,
@@ -468,12 +458,8 @@
         1,
         0,
         null
-      ],
-      "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/league.rb": [
-        0,
-        0
       ]
     },
-    "timestamp": 1492390972
+    "timestamp": 1492393389
   }
 }
