@@ -1,8 +1,9 @@
 html {
   background-color: #c0c0c0; 
   background-image:url(asset_path('field.jpeg'));
+  background-repeat: no-repeat;
   background-position: top center;
-  background-size:     cover;
+  background-size:     100% 100%;
   background-attachment: fixed;
 }
 body {
@@ -13,8 +14,7 @@ body {
   margin:0px auto;
   margin-top: 25px;
   margin-bottom: 25px;
-  min-width: 860px;
-  width: 80%;
+  min-width: 820px;
 }
 #main {
   margin: 10px;
@@ -152,4 +152,22 @@ td {
 
 table { 
     border-collapse: collapse; 
+}
+@media (min-width:1440px) {
+  body {
+    width: 1150px;
+  }
+}
+@media (max-width:1439px) {
+  #create_and_map {
+      float: none;
+      width: 835px;
+  }
+  #games_listing {
+      float: none;
+      width: 835px;
+  }
+  body {
+    width: 80%;
+  }
 }
