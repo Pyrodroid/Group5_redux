@@ -149,7 +149,10 @@ end
  
   describe "POST #create" do
     context "with valid attributes" do
-      it "saves the new game in the database"
+    let(:new_attributes) { FactoryGirl.build(:game, onestring: 'a').attributes.symbolize_keys }
+      it "saves the new game in the database" do
+        post :create, {:id => game.to_param, :game => new_attributes}
+      end
       it "redirects to the success page"
     end
   end
