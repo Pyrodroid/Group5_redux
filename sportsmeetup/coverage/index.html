@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-16T23:08:19+00:00">2017-04-16T23:08:19+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-17T01:02:52+00:00">2017-04-17T01:02:52+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">60.47%</span></span>
+    (<span class="covered_percent"><span class="red">64.23%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.76
+         0.93
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>15</b> files in total.
-    <b>129</b> relevant lines. 
-    <span class="green"><b>78</b> lines covered</span> and
-    <span class="red"><b>51</b> lines missed </span>
+    <b>123</b> relevant lines. 
+    <span class="green"><b>79</b> lines covered</span> and
+    <span class="red"><b>44</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#31ac97f0c351b55c23b9220fa6fbd8c7f48face4" class="src_link" title="app/controllers/games_controller.rb">app/controllers/games_controller.rb</a></td>
-        <td class="red strong">52.7 %</td>
-        <td>116</td>
-        <td>74</td>
-        <td>39</td>
-        <td>35</td>
-        <td>0.8</td>
+        <td class="red strong">58.82 %</td>
+        <td>105</td>
+        <td>68</td>
+        <td>40</td>
+        <td>28</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -209,20 +209,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">55.81%</span></span>
+    (<span class="covered_percent"><span class="red">61.25%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.79
+       <span class="green">
+         1.05
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>4</b> files in total.
-    <b>86</b> relevant lines. 
-    <span class="green"><b>48</b> lines covered</span> and
-    <span class="red"><b>38</b> lines missed </span>
+    <b>80</b> relevant lines. 
+    <span class="green"><b>49</b> lines covered</span> and
+    <span class="red"><b>31</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -250,12 +250,12 @@
       
       <tr>
         <td class="strong"><a href="#31ac97f0c351b55c23b9220fa6fbd8c7f48face4" class="src_link" title="app/controllers/games_controller.rb">app/controllers/games_controller.rb</a></td>
-        <td class="red strong">52.7 %</td>
-        <td>116</td>
-        <td>74</td>
-        <td>39</td>
-        <td>35</td>
-        <td>0.8</td>
+        <td class="red strong">58.82 %</td>
+        <td>105</td>
+        <td>68</td>
+        <td>40</td>
+        <td>28</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -639,11 +639,11 @@
         <div class="source_table" id="31ac97f0c351b55c23b9220fa6fbd8c7f48face4">
   <div class="header">
     <h3>app/controllers/games_controller.rb</h3>
-    <h4><span class="red">52.7 %</span> covered</h4>
+    <h4><span class="red">58.82 %</span> covered</h4>
     <div>
-      <b>74</b> relevant lines. 
-      <span class="green"><b>39</b> lines covered</span> and
-      <span class="red"><b>35</b> lines missed.</span>
+      <b>68</b> relevant lines. 
+      <span class="green"><b>40</b> lines covered</span> and
+      <span class="red"><b>28</b> lines missed.</span>
     </div>
   </div>
   
@@ -662,8 +662,8 @@
           <code class="ruby">    def game_params</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="3">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="3">
+          <span class="hits">5</span>
           
           <code class="ruby">        params.require(:game).permit(:title, :sport, :location, :time, :min, :max, :sign_ups, :back_out, :back_link, :details, :emails, :last_email, :updated_at, :password, :password_confirmation, :onestring, :twostring, :oneint, :twoint, :onedate, :onetime, :onedatetime, :lat, :long, :full_name)</code>
         </li>
@@ -836,14 +836,14 @@
           <code class="ruby">    def update</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="32">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="32">
+          <span class="hits">7</span>
           
           <code class="ruby">        @game = Game.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="33">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="33">
+          <span class="hits">7</span>
           
           <code class="ruby">        if (params[:commit]==&#39;Sign Up&#39;)</code>
         </li>
@@ -854,14 +854,14 @@
           <code class="ruby">            #@game.update(onestring: game_params[:onestring])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="35">
+          <span class="hits">2</span>
           
           <code class="ruby">            if (@game.password != &quot;&quot;&amp;&amp;@game.password!=nil)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
           
           <code class="ruby">                if @game.password == game_params[:onestring]</code>
         </li>
@@ -899,7 +899,7 @@
         <li class="missed" data-hits="0" data-linenumber="42">
           
           
-          <code class="ruby">                    @game.update(emails: &quot;#{@oldstring}&quot;+&quot;#{game_params[:last_email]}&quot;+&quot;,&quot;)</code>
+          <code class="ruby">                    @game.update_attributes(emails: &quot;#{@oldstring}&quot;+&quot;#{game_params[:last_email]}&quot;+&quot;,&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="43">
@@ -911,7 +911,7 @@
         <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby">                        @game.update(twostring: &quot;#{@newname}&quot;)</code>
+          <code class="ruby">                        @game.update_attributes(twostring: &quot;#{@newname}&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
@@ -923,7 +923,7 @@
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">                        @game.update(twostring: &quot;#{@oldnames}&quot;+&quot;\n&quot;+&quot;#{@newname}&quot;) </code>
+          <code class="ruby">                        @game.update_attributes(twostring: &quot;#{@oldnames}&quot;+&quot;\n&quot;+&quot;#{@newname}&quot;) </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -938,8 +938,8 @@
           <code class="ruby">                else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="49">
+          
           
           <code class="ruby">                    redirect_to games_error_path</code>
         </li>
@@ -956,32 +956,32 @@
           <code class="ruby">            else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="52">
-          
+        <li class="covered" data-hits="2" data-linenumber="52">
+          <span class="hits">2</span>
           
           <code class="ruby">                @game.sign_ups=@game.sign_ups+1</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
-          
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
           
           <code class="ruby">                @game.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
-          
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
           
           <code class="ruby">                @oldstring = @game.emails</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
-          
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
           
           <code class="ruby">                @oldnames = @game.twostring</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="56">
-          
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
           
           <code class="ruby">                @newname = game_params[:full_name]</code>
         </li>
@@ -989,7 +989,7 @@
         <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">                @game.update(emails: &quot;#{@oldstring}&quot;+&quot;#{game_params[:last_email]}&quot;+&quot;,&quot;)</code>
+          <code class="ruby">                @game.update_attributes(emails: &quot;#{@oldstring}&quot;+&quot;#{game_params[:last_email]}&quot;+&quot;,&quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="58">
@@ -1001,7 +1001,7 @@
         <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">                    @game.update(twostring: &quot;#{@newname}&quot;)</code>
+          <code class="ruby">                    @game.update_attributes(twostring: &quot;#{@newname}&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
@@ -1013,7 +1013,7 @@
         <li class="missed" data-hits="0" data-linenumber="61">
           
           
-          <code class="ruby">                    @game.update(twostring: &quot;#{@oldnames}&quot;+&quot;\n&quot;+&quot;#{@newname}&quot;) </code>
+          <code class="ruby">                    @game.update_attributes(twostring: &quot;#{@oldnames}&quot;+&quot;\n&quot;+&quot;#{@newname}&quot;) </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
@@ -1028,8 +1028,8 @@
           <code class="ruby">            end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="64">
+          
           
           <code class="ruby">            if @game.sign_ups==@game.min</code>
         </li>
@@ -1046,8 +1046,8 @@
           <code class="ruby">            end</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="67">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="67">
+          <span class="hits">5</span>
           
           <code class="ruby">        elsif (params[:commit]==&#39;Back Out&#39;)</code>
         </li>
@@ -1094,38 +1094,38 @@
           <code class="ruby">            redirect_to games_path</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="75">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="75">
+          <span class="hits">4</span>
           
           <code class="ruby">        elsif (params[:commit]==&#39;Confirm Changes&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="76">
+          <span class="hits">2</span>
           
           <code class="ruby">                @game = Game.find params[:id]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="77">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="77">
+          <span class="hits">2</span>
           
           <code class="ruby">                if /[0-9]+/.match(game_params[:max])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="78">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="78">
+          <span class="hits">2</span>
           
           <code class="ruby">                    @game.update_attributes!(game_params)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="79">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="79">
+          <span class="hits">2</span>
           
           <code class="ruby">                    flash[:notice] = &quot;#{@game.title} was successfully updated.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="80">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="80">
+          <span class="hits">2</span>
           
           <code class="ruby">                redirect_to root_path</code>
         </li>
@@ -1274,73 +1274,7 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def verify_pw</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="106">
-          
-          
-          <code class="ruby">        if @game.password == &quot;&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="107">
-          
-          
-          <code class="ruby">            return true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
-          
-          
-          <code class="ruby">        else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="109">
-          
-          
-          <code class="ruby">            if @game.password == @game.onestring</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="110">
-          
-          
-          <code class="ruby">                return true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="111">
-          
-          
-          <code class="ruby">            else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="112">
-          
-          
-          <code class="ruby">                return false</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="113">
-          
-          
-          <code class="ruby">            end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="114">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="115">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="116">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby">end</code>

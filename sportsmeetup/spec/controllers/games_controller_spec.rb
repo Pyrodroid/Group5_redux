@@ -76,18 +76,23 @@ end
   end
 
   describe "PUT update" do
-      let(:new_attributes) { FactoryGirl.build(:game, title: 'New Title', sport:'new sport').attributes.symbolize_keys }
+      let(:new_attributes) { FactoryGirl.build(:game, title: 'New Title', sport:'new sport', sign_ups:1, password:"").attributes.symbolize_keys }
       it "updates the requested game", focus: true do
         game = Game.create!
         put :update, {:id => game.to_param, :game => new_attributes, :commit=>'Confirm Changes'}
         game.reload
         expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
       end
-      it "signs up a player", focus: true do
-        put :update, {:id => game.to_param, :game => new_attributes, :commit=> 'Sign Up'}
-        game.reload
-        #expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
+      it "signs up a player to a meet with a password", focus: true do
+        game1 = Game.create!
+        put :update, {:game=>game1, :id => game1.to_param, :commit=>'Sign Up'}
       end
+      it "signs up a player to a meet with no password", focus: true do
+        game2 = Game.create!
+        put :update, {:id => game2.to_param, :game => new_attributes, :commit=>'Confirm Changes'}
+        put :update, {:game=>game2, :id => game2.to_param, :commit=>'Sign Up'}
+      end
+
       it "removes a player", focus: true do
         put :update, {:id => game.to_param, :game => new_attributes, :commit=> 'Back Out'}
         game.reload

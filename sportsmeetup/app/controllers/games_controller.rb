@@ -39,11 +39,11 @@ class GamesController < ApplicationController
                     @oldstring = @game.emails
                     @oldnames = @game.twostring
                     @newname = game_params[:full_name]
-                    @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
+                    @game.update_attributes(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
                     if (@oldnames==""||@oldnames==nil) 
-                        @game.update(twostring: "#{@newname}")
+                        @game.update_attributes(twostring: "#{@newname}")
                     else 
-                        @game.update(twostring: "#{@oldnames}"+"\n"+"#{@newname}") 
+                        @game.update_attributes(twostring: "#{@oldnames}"+"\n"+"#{@newname}") 
                     end
                 else
                     redirect_to games_error_path
@@ -54,11 +54,11 @@ class GamesController < ApplicationController
                 @oldstring = @game.emails
                 @oldnames = @game.twostring
                 @newname = game_params[:full_name]
-                @game.update(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
+                @game.update_attributes(emails: "#{@oldstring}"+"#{game_params[:last_email]}"+",")
                 if (@oldnames==""||@oldnames==nil) 
-                    @game.update(twostring: "#{@newname}")
+                    @game.update_attributes(twostring: "#{@newname}")
                 else 
-                    @game.update(twostring: "#{@oldnames}"+"\n"+"#{@newname}") 
+                    @game.update_attributes(twostring: "#{@oldnames}"+"\n"+"#{@newname}") 
                 end
             end
             if @game.sign_ups==@game.min
@@ -101,16 +101,5 @@ class GamesController < ApplicationController
         @game.destroy
         flash[:notice] = "#{@game.title} deleted."
         redirect_to games_path
-    end
-    def verify_pw
-        if @game.password == ""
-            return true
-        else
-            if @game.password == @game.onestring
-                return true
-            else
-                return false
-            end
-        end
     end
 end
