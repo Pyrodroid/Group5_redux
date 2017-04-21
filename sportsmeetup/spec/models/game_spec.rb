@@ -22,6 +22,11 @@ RSpec.describe Game, type: :model do
       expect(Notifier).to receive(:go).and_call_original
       Game.sign_up(@game4, "Name", "good@email.com")
     end
+    it "backout decrements sign_ups and sends email notification" do
+      @game5=FactoryGirl.create(:game, sign_ups:3, min: 2, emails: "email1@email.com, another@email.com", twostring: "A Name\nAnother Name\n")
+      expect(Notifier).to receive(:bye).and_call_original
+      Game.back_out(@game5, "A Name", "email1@email.com")
+    end
     #it "sets oneint to 0 for good email" do
     #game=FactoryGirl.create(:game, last_email: "good@email2.com")
     #Game.sign_up(game, "Name", "good@email.net")

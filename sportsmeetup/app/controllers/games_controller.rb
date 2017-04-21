@@ -90,12 +90,15 @@ class GamesController < ApplicationController
 =end
             end
         elsif (params[:commit]=='Back Out')
+            Game.back_out(@game, @newname, @newemail)
+=begin
             @game = Game.find(params[:id])
             @game.sign_ups=@game.sign_ups-1
             @game.save
             if (@game.sign_ups==(@game.min-1))
                 Notifier.stop(@game).deliver 
             end
+=end
             redirect_to games_path
         elsif (params[:commit]=='Confirm Changes')
                 @game = Game.find params[:id]

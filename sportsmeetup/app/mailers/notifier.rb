@@ -3,7 +3,7 @@ class Notifier < ApplicationMailer
 
    def sign(game)
     @game = game
-    mail(to: @game.emails, subject: "It\'s on!")
+    mail(to: @game.emails, subject: "Hi!")
   end
   def go(game)
     @game = game
@@ -16,5 +16,9 @@ class Notifier < ApplicationMailer
   def stop(game)
     @game = game
     mail(to: @game.emails, subject: "It\'s off.")
+  end
+  def bye(game, email)
+    @game = game
+    mail(to: email, subject: "Bye")
   end
 end

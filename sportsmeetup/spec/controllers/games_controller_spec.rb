@@ -76,8 +76,14 @@ end
   end
 
   describe "PUT update" do
+      let(:game) { FactoryGirl.create(:game, title: "Old Title", max:"nan") }
+      let(:bad_attributes) { FactoryGirl.build(:game, title: 'New Title', sport:'new sport', max:0, min: "not a number", sign_ups:1, password:"").attributes.symbolize_keys }
+      it "does not update the requested game with invalid params" do
+        put :update, {:id => game.to_param, :game => new_attributes, :commit=>'Confirm Changes'}
+        expect(game.title).to eq("Old Title")
+      end
       let(:new_attributes) { FactoryGirl.build(:game, title: 'New Title', sport:'new sport', sign_ups:1, password:"").attributes.symbolize_keys }
-      it "updates the requested game", focus: true do
+      it "updates the requested game with valid params", focus: true do
         game = Game.create!
         put :update, {:id => game.to_param, :game => new_attributes, :commit=>'Confirm Changes'}
         game.reload
@@ -93,16 +99,16 @@ end
         game2 = FactoryGirl.create(:game, sign_ups:1, password: "")
         put :update, {:id => game2.to_param, :game=>new_attributes, :commit=>'Sign Up'}
       end
-      it "calls the correct model method", focus: true do
+      it "calls the signup model method", focus: true do
         game3 = FactoryGirl.create(:game, sign_ups:1, last_email:"good@email.com", password: "")
         Game.sign_up(game3, "A name", "good@email.com")
         expect(game3.sign_ups).to eq(2)
       end
-
-      it "removes a player", focus: true do
-        put :update, {:id => game.to_param, :game => new_attributes, :commit=> 'Back Out'}
-        game.reload
-        #expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
+      
+      it "calls the backout model method", focus: true do
+        game3 = FactoryGirl.create(:game, sign_ups:2, emails: "an@email.net,good@email.com,", last_email:"good@email.com", password: "")
+        expect(Game).to receive(:back_out)
+        put :update, {:id => game3.to_param, :game=>new_attributes, :commit=>'Back Out'}
       end
 end    
 describe "PUT update/:id" do
