@@ -83,14 +83,20 @@ end
         game.reload
         expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
       end
+      let(:new_attributes) { FactoryGirl.build(:game, title: 'New Title', sport:'new sport', sign_ups:1, password:"Password").attributes.symbolize_keys }
       it "signs up a player to a meet with a password", focus: true do
-        game1 = Game.create!
-        put :update, {:game=>game1, :id => game1.to_param, :commit=>'Sign Up'}
+        game1 = FactoryGirl.create(:game, sign_ups:1, last_email:"good@email.com", password: "Password")
+        put :update, {:id => game1.to_param, :game=>new_attributes, :commit=>'Sign Up'}
       end
+       let(:new_attributes) { FactoryGirl.build(:game, last_email:"good_email", password:"").attributes.symbolize_keys }
       it "signs up a player to a meet with no password", focus: true do
-        game2 = Game.create!
-        put :update, {:id => game2.to_param, :game => new_attributes, :commit=>'Confirm Changes'}
-        put :update, {:game=>game2, :id => game2.to_param, :commit=>'Sign Up'}
+        game2 = FactoryGirl.create(:game, sign_ups:1, password: "")
+        put :update, {:id => game2.to_param, :game=>new_attributes, :commit=>'Sign Up'}
+      end
+      it "calls the correct model method", focus: true do
+        game3 = FactoryGirl.create(:game, sign_ups:1, last_email:"good@email.com", password: "")
+        Game.sign_up(game3, "A name", "good@email.com")
+        expect(game3.sign_ups).to eq(2)
       end
 
       it "removes a player", focus: true do
@@ -110,11 +116,12 @@ describe "PUT update/:id" do
   end
 end
     describe "verify correct password" do
-      let(:new_attributes) { FactoryGirl.build(:game, onestring: 'password').attributes.symbolize_keys }
+      let(:new_attributes) { FactoryGirl.build(:game, onestring: 'Password').attributes.symbolize_keys }
       
       it "updates the requiested game", focus: true do
         game = Game.create! valid_attributes
-        put :update, {:id=> game.to_param, :game =>new_attributes}
+        #put :update, {:id=> game.to_param, :game =>new_attributes, :commit=>"Confirm Changes"}
+        put :update, {:id=> game.to_param, :game =>new_attributes, :commit=>"Sign Up"}
         game.reload
         expect(assigns(:game).attributes.symbolize_keys[:game]).to eq(new_attributes[:game])
         expect(game.sign_ups).to eq(4)
@@ -149,7 +156,7 @@ end
  
   describe "POST #create" do
     context "with valid attributes" do
-    let(:new_attributes) { FactoryGirl.build(:game, onestring: 'a').attributes.symbolize_keys }
+    let(:new_attributes) { FactoryGirl.build(:game, onestring: 'password').attributes.symbolize_keys }
       it "saves the new game in the database" do
         post :create, {:id => game.to_param, :game => new_attributes}
       end

@@ -1,6 +1,10 @@
 class Notifier < ApplicationMailer
   default from: 'no-reply@sportsmeetup.com'
 
+   def sign(game)
+    @game = game
+    mail(to: @game.emails, subject: "It\'s on!")
+  end
   def go(game)
     @game = game
     mail(to: @game.emails, subject: "It\'s on!")

@@ -15,7 +15,7 @@
         <th class="header">Time</th>
         <th class="header">Signed Up/Max</th>
         <th class="header">Min</th>
-        <th class="header"><%#Emails (for debug for now)%></th>
+        <th class="header"></th>
       </tr>
      
       <% @games.each do |game| %>
@@ -26,7 +26,6 @@
           <td><%= game.time%></td>
           <td><%= game.sign_ups%>/<%= game.max%></td>
           <td><%= game.min%></td>
-          <%#= game.emails%>
           <td><%= link_to 'More Info', {:controller => 'games', :action => 'meet_details', :id => game } %></td>
           <%#= link_to 'Edit Meet', edit_meet_path(game) %>
           <%# if game.sign_ups <  game.max %>      

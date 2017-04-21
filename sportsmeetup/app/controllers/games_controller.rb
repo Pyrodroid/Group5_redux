@@ -27,13 +27,32 @@ class GamesController < ApplicationController
     end
     def signup
         @game = Game.find(params[:id])
+=begin
+        @oldnames=game.twostring
+        @oldemails=game.emails
+        game.update_attributes(emails: "#{@oldemails}"+"#{game_params[:last_email]}"+",")
+        if (@oldnames!=""&&@oldnames!=nil)
+            game.update_attributes(twostring: "#{@oldnames}"+"\n"+"#{game_params[:full_name]}")
+        else
+            game.update_attributes(twostring: "#{game_params[:full_name]}")
+        end
+        if game.sign_ups==game.min
+            Notifier.go(@game).deliver 
+        else
+            Notifier.more(@game).deliver
+        end
+=end
     end
     def update
         @game = Game.find(params[:id])
+        @newname = game_params[:full_name]
+        @newemail = game_params[:last_email]
         if (params[:commit]=='Sign Up')
             #@game.update(onestring: game_params[:onestring])
             if (@game.password != ""&&@game.password!=nil)
                 if @game.password == game_params[:onestring]
+                    Game.sign_up(@game, @newname, @newemail)
+=begin
                     @game.sign_ups=@game.sign_ups+1
                     @game.save
                     @oldstring = @game.emails
@@ -45,10 +64,18 @@ class GamesController < ApplicationController
                     else 
                         @game.update_attributes(twostring: "#{@oldnames}"+"\n"+"#{@newname}") 
                     end
+=end
                 else
                     redirect_to games_error_path
                 end
             else
+                Game.sign_up(@game, @newname, @newemail)
+=begin
+                if @game.sign_ups==@game.min
+                    Notifier.go(@game).deliver 
+                else
+                    Notifier.more(@game).deliver 
+        end
                 @game.sign_ups=@game.sign_ups+1
                 @game.save
                 @oldstring = @game.emails
@@ -60,9 +87,7 @@ class GamesController < ApplicationController
                 else 
                     @game.update_attributes(twostring: "#{@oldnames}"+"\n"+"#{@newname}") 
                 end
-            end
-            if @game.sign_ups==@game.min
-                Notifier.go(@game).deliver 
+=end
             end
         elsif (params[:commit]=='Back Out')
             @game = Game.find(params[:id])
@@ -74,7 +99,8 @@ class GamesController < ApplicationController
             redirect_to games_path
         elsif (params[:commit]=='Confirm Changes')
                 @game = Game.find params[:id]
-                if /[0-9]+/.match(game_params[:max])
+                if /[0-9]+/.match(game_params[:max])&&/[0-9]+/.match(game_params[:min])
+                
                     @game.update_attributes!(game_params)
                     flash[:notice] = "#{@game.title} was successfully updated."
                 redirect_to root_path
