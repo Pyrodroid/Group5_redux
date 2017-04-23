@@ -15,7 +15,9 @@
     <% if @game.sign_ups <  @game.max %>      
       <p></p><%= link_to 'Sign Up', {:controller => 'games', :action => 'signup', :id => @game.id} %></td></p>
     <% end %>
+    <%if @game.sign_ups > 0%>
      <td><%= link_to 'Back Out',{:controller => 'games', :action => 'back_link', :id => @game.id} %></td>
+    <% end %>
 </p>
 <p><%= link_to 'Edit Meet', edit_game_path(@game) %></p>
 <%=link_to 'Delete Meet', game_path(@game), :method => :delete, :confirm => 'Are you sure?'%>
