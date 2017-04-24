@@ -4,23 +4,6 @@
       "/home/ubuntu/workspace/Group5/sportsmeetup/app/models/game.rb": [
         1,
         1,
-<<<<<<< HEAD
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        0,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        0,
-=======
         2,
         null,
         2,
@@ -35,44 +18,39 @@
         2,
         2,
         2,
+        0,
+        null,
         2,
->>>>>>> e2bf5c22da403bdf3a1c8cb048d42bc134375641
-        null,
-        1,
         null,
         null,
         null,
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        2,
+        2,
         1,
         1,
         null,
-        1,
-        1,
-        0,
-        0,
-        null,
-        1,
+        2,
         0,
         null,
-        1,
+        2,
         null,
         null
       ],
       "/home/ubuntu/workspace/Group5/sportsmeetup/app/controllers/games_controller.rb": [
         1,
         1,
-<<<<<<< HEAD
         36,
-=======
-        26,
->>>>>>> e2bf5c22da403bdf3a1c8cb048d42bc134375641
         null,
         1,
         28,
@@ -121,15 +99,9 @@
         9,
         9,
         null,
-<<<<<<< HEAD
         5,
         5,
         0,
-=======
-        2,
-        1,
-        1,
->>>>>>> e2bf5c22da403bdf3a1c8cb048d42bc134375641
         null,
         null,
         null,
@@ -144,14 +116,10 @@
         null,
         null,
         null,
-<<<<<<< HEAD
         5,
-=======
+        null,
+        null,
         0,
->>>>>>> e2bf5c22da403bdf3a1c8cb048d42bc134375641
-        null,
-        null,
-        1,
         null,
         null,
         null,
@@ -243,8 +211,8 @@
         1,
         null,
         1,
-        1,
-        1,
+        2,
+        2,
         null,
         1,
         0,
@@ -259,8 +227,8 @@
         0,
         null,
         1,
-        1,
-        1,
+        2,
+        2,
         null,
         null
       ],
@@ -291,12 +259,6 @@
         null,
         1,
         1,
-<<<<<<< HEAD
-=======
-        2,
-        2,
-        null,
->>>>>>> e2bf5c22da403bdf3a1c8cb048d42bc134375641
         1,
         1,
         null,
@@ -316,11 +278,7 @@
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1492997538
-=======
-    "timestamp": 1492982819
->>>>>>> e2bf5c22da403bdf3a1c8cb048d42bc134375641
+    "timestamp": 1493000414
   },
   "RSpec": {
     "coverage": {

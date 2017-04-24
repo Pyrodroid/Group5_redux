@@ -16,6 +16,13 @@ Feature: Backing out of Meets
         And I fill "game_last_email" with "test@testing.com" within "form"
         And I hit the "Back Out" button
         Then I should be on the find_meets page
+        
+    Scenario: Backing out of a meet - removing info
+      Given there is a meet with my name and email signed up
+      And I backout of the meet
+      Then the meet should not include my name and email anymore
+     
+      
 
 Scenario: Back Out From Meet List
 Given user is on meet list
