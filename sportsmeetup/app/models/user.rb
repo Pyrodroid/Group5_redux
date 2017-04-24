@@ -1,3 +1,4 @@
+# Model for players to a Game (Shouldn't this be "Player"?)
 class User < ActiveRecord::Base
     
     geocoded_by :address

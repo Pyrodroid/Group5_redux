@@ -1,3 +1,4 @@
+# Controller for the (old?) application index, not sure if deprecated?
 class SportsController < ApplicationController
   def index
     @user = User.all

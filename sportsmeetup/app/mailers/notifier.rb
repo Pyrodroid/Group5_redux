@@ -1,3 +1,4 @@
+# Application notification mailer for dispatching emails to users when certain events occur
 class Notifier < ApplicationMailer
   default from: 'no-reply@sportsmeetup.com'
 

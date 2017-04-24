@@ -1,3 +1,5 @@
+# Model for a game (aka meet-up, aka get-together, etc)
+# Contains the specific methods for adding or removing a person from a game
 class Game < ActiveRecord::Base
    def self.sign_up(game, new_name, new_email)
         game.update_attributes(oneint: 0) 

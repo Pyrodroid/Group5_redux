@@ -1,11 +1,12 @@
+# Migration for creating Users table for User model
 class CreateUsers < ActiveRecord::Migration
   def change
-    create_table :users do |t|
-      t.string :first_name
-      t.string :last_name
-      t.string :email
+    create_table :users do |user|
+      user.string :first_name
+      user.string :last_name
+      user.string :email
 
-      t.timestamps null: false
+      user.timestamps null: false
     end
   end
 end
