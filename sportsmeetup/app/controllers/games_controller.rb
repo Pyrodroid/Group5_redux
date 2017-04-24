@@ -21,6 +21,10 @@ class GamesController < ApplicationController
     def back_link
         @game = Game.find(params[:id])
     end
+    
+    def signup
+        @game = Game.find(params[:id])
+    end
 
     def update
         @game = Game.find(params[:id])
