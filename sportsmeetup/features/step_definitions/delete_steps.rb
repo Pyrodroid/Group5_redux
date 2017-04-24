@@ -25,10 +25,15 @@ Then(/^I should not see the game I deleted$/) do
 end
 
 When(/^Someone deletes the meet$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+      visit root_path
+    with_scope("table") do
+        click_link("More Info", match: :first)
+    end
+    click_link("Delete Meet", match: :first)
 end
 
 Then(/^I should get an email that says the meet has been deleted$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+ email = ActionMailer::Notifier.deliveries.first
+ email.body.should include("deleted")
 end
 

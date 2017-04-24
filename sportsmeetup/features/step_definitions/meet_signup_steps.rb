@@ -51,3 +51,13 @@ end
 When (/^I hit "more details" within "table"$/) do
   #visit meet_details_path(2)
 end
+
+Given(/^there is a meet and the signup method for that meet gets called$/) do
+  game = FactoryGirl.create(:game, sign_ups: 3)
+  Game.sign_up(game, "New Joe", "new@email.com")
+    expect(game.sign_ups).to equal(4)
+end
+
+
+Then(/^that meet's signups should increase by one$/) do
+end

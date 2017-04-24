@@ -23,6 +23,10 @@ Feature: Sign up for a meet
         And I fill "game_last_email" with "test@testing.com" within "form"
         And I hit the submit button
         Then I should be on the find_meets page
+        
+    Scenario: Signing up for a meet - method
+      Given there is a meet and the signup method for that meet gets called
+      Then that meet's signups should increase by one
     
     Scenario: Signing up for a meet - with password
         Given I am on the find_meets page
