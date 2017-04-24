@@ -23,14 +23,24 @@ When(/^the signups for the meet are one less than the minumum$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
+When(/^there is a game, it sends the correct notifications$/) do
+    game = FactoryGirl.create(:game, sign_ups: 3)
+    Game.sign_up(game, "New Joe", "new@email.com")
+    Game.back_out(game, "New Joe", "new@email.com")
+    visit root_path
+      with_scope("table") do
+        click_link('More Info', match: :first)
+    end
+    Notifier.stop(game)
+    Notifier.del(game)
+end
+
 When(/^someone signs up for the meet$/) do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^I should get an email that says the meet will happen$/) do
   email = ActionMailer::Base.deliveries.first
-  email.from.should == "admin@example.com"
-  email.to.should == @game.emails
   email.body.should include("is on!")
 end
 

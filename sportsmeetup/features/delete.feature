@@ -6,7 +6,9 @@ Scenario: deleting a game
   And I should be back on the "Available Games" page
   And I should see "deleted"
   
-Scenario: deleted game notification
-  When I am signed up for a meet
-  And Someone deletes the meet
-  Then I should get an email that says the meet has been deleted
+
+  
+#Scenario: deleted game notification
+ # When I am signed up for a meet
+  #And Someone deletes the meet
+  #Then I should get an email that says the meet has been deleted

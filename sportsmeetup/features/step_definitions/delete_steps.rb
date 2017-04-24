@@ -18,6 +18,7 @@ end
 
 When(/^I should be back on the "([^"]*)" page$/) do |arg1|
   expect(page).to have_content(arg1)
+  
 end
 
 Then(/^I should not see the game I deleted$/) do

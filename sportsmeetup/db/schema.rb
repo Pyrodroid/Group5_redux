@@ -42,25 +42,6 @@ ActiveRecord::Schema.define(version: 20170414223237) do
     t.string   "extra_string"
   end
 
-  create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.datetime "release_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "signedups", force: :cascade do |t|
-    t.integer  "game_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "signedups", ["game_id"], name: "index_signedups_on_game_id"
-  add_index "signedups", ["user_id"], name: "index_signedups_on_user_id"
-
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"

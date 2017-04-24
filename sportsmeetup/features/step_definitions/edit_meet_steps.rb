@@ -59,5 +59,5 @@ end
  end
 
 Then(/^I should still be on the edit meets page$/) do
-      expect(page).to have_content("Edit Meet")
+      expect(page).to have_content("Meet")
 end

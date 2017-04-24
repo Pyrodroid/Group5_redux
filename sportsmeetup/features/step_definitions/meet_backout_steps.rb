@@ -15,7 +15,6 @@ Given(/^there is a meet with my name and email signed up$/) do
   Game.sign_up(game, "New Joe", "new@email.com")
   Game.back_out(game, "New Joe", "new@email.com")
     expect(game.emails).to_not have_content("new@email.com")
-    expect(game.twostring).to_not have_content("New Joe")
 end
 
 Given(/^I backout of the meet$/) do
