@@ -11,6 +11,7 @@
 <p><strong>Signed up: </strong> <%= @game.sign_ups %>/<%= @game.max %></p>
 <p><strong>Minimum players: </strong> <%= @game.min %></p>
 <p><strong>Details: </strong> <%= @game.details %></p>
+<p></p>
 <p>
     <% if @game.sign_ups <  @game.max %>      
       <p></p><%= link_to 'Sign Up', {:controller => 'games', :action => 'signup', :id => @game.id} %></td></p>
