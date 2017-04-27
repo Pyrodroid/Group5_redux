@@ -1,5 +1,5 @@
 # Controller for the (old?) application index, not sure if deprecated?
-class SportsController < ApplicationController
+class PlacesController < ApplicationController
   def index
     @user = User.all
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
